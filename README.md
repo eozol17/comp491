@@ -1,2 +1,2 @@
 # comp491
-Comp491 Graduation Project of Team q
+Comp491 Graduation Project of MFBE
