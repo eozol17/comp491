@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79074E8627D7672B000AB284 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79074E8527D7672B000AB284 /* CameraViewController.swift */; };
 		796A05ED27D60029009E0DAB /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A05EC27D60029009E0DAB /* Product.swift */; };
 		796A05EF27D60092009E0DAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A05EE27D60092009E0DAB /* User.swift */; };
 		796FDBF827CF68A7007FC5CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796FDBF727CF68A7007FC5CA /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79074E8527D7672B000AB284 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		796A05EC27D60029009E0DAB /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		796A05EE27D60092009E0DAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		796FDBF427CF68A7007FC5CA /* CompTermProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompTermProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79074E8427D76712000AB284 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				796FDBFB27CF68A7007FC5CA /* ViewController.swift */,
+				79074E8527D7672B000AB284 /* CameraViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		796A05EB27D60015009E0DAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,10 +80,10 @@
 		796FDBF627CF68A7007FC5CA /* CompTermProject */ = {
 			isa = PBXGroup;
 			children = (
+				79074E8427D76712000AB284 /* ViewControllers */,
 				796A05EB27D60015009E0DAB /* Model */,
 				796FDBF727CF68A7007FC5CA /* AppDelegate.swift */,
 				796FDBF927CF68A7007FC5CA /* SceneDelegate.swift */,
-				796FDBFB27CF68A7007FC5CA /* ViewController.swift */,
 				796FDBFD27CF68A7007FC5CA /* Main.storyboard */,
 				796FDC0027CF68A8007FC5CA /* Assets.xcassets */,
 				796FDC0227CF68A8007FC5CA /* LaunchScreen.storyboard */,
@@ -157,6 +168,7 @@
 				796FDBF827CF68A7007FC5CA /* AppDelegate.swift in Sources */,
 				796A05EF27D60092009E0DAB /* User.swift in Sources */,
 				796FDBFA27CF68A7007FC5CA /* SceneDelegate.swift in Sources */,
+				79074E8627D7672B000AB284 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
