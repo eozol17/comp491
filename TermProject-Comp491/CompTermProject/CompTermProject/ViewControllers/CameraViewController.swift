@@ -13,6 +13,11 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
 
         // Do any additional setup after loading the view.
     }
