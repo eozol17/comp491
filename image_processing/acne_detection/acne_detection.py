@@ -1,15 +1,11 @@
-import matplotlib.pyplot as plt
-from matplotlib.pyplot import figure
-import numpy as np
-import matplotlib.pyplot as plt
-
 from skimage.draw import line, polygon, circle, ellipse
 import numpy as np
-
-import matplotlib.pyplot as plt
-from matplotlib.pyplot import figure
 import cv2
 import mediapipe as mp
+from scipy import ndimage as ndi
+from skimage.feature import peak_local_max
+from skimage.exposure import rescale_intensity
+
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -139,5 +135,33 @@ def exclude_polygon(landmarks, lst, image, typ):
     return img
 
 
-image, landmarks = landmark_detection("sample.jpg")
-new = divide_parts(image, landmarks)
+def preprocessing(image):
+    image = rescale_intensity(img, in_range=(50, 220))
+    rgb_planes = cv2.split(image)
+    result_planes = []
+    result_norm_planes = []
+    for plane in rgb_planes:
+        dilated_img = cv2.dilate(plane, np.ones((7,7), np.uint8))
+        bg_img = cv2.medianBlur(dilated_img, 21)
+        diff_img = 255 - cv2.absdiff(plane, bg_img)
+        norm_img = cv2.normalize(diff_img,None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_8UC1)
+        result_planes.append(diff_img)
+        result_norm_planes.append(norm_img)
+
+    result = cv2.merge(result_planes)
+    result_norm = cv2.merge(result_norm_planes)
+    img_gray = result[:, :,0]
+    img_gray = (img_gray*255).astype(np.uint8)
+    return img_gray
+
+
+def acne_detection(processed_image):
+    image_max = ndi.maximum_filter(img_gray, size=4, mode='constant')
+    coordinates = peak_local_max(img_gray, min_distance=10, threshold_rel=0.25)
+    patches = []
+    for coordinate in coordinates:
+        im = image[(coordinate[0]-5):(coordinate[0]+5), (coordinate[1]-5):(coordinate[1]+5), :]
+        if list(im.flatten()).count(0)>10:
+            continue
+        patches.append(image[(coordinate[0]-30):(coordinate[0]+30), (coordinate[1]-30):(coordinate[1]+30), :])
+    return patches
