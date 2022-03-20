@@ -19,7 +19,7 @@ mp_face_mesh = mp.solutions.face_mesh
 def landmark_detection(image):
     IMAGE_FILES = [image]
     drawing_spec = mp_drawing.DrawingSpec(thickness=1, circle_radius=1)
-    image = cv2.imread(file)
+    image = cv2.imread(image)
     with mp_face_mesh.FaceMesh(
             static_image_mode=True,
             max_num_faces=1,
@@ -58,32 +58,35 @@ def landmark_detection(image):
 
     return image, results.multi_face_landmarks
 
+
 def crop_photo_len(image):
     crop1 = -1
     crop2 = -1
 
     for i in range(len(image)):
-        if np.sum(image[i,:,0]) != 0 and crop1 == -1:
-            crop1 = i-1
-        elif  crop1 != -1 and crop2 == -1 and np.sum(image[i,:,0]) == 0:
-            crop2 =i
+        if np.sum(image[i, :, 0]) != 0 and crop1 == -1:
+            crop1 = i - 1
+        elif crop1 != -1 and crop2 == -1 and np.sum(image[i, :, 0]) == 0:
+            crop2 = i
     return crop1, crop2
+
 
 def crop_photo_width(image):
     crop1 = -1
     crop2 = -1
 
     for i in range(len(image[0])):
-        if np.sum(image[:,i,0]) != 0 and crop1 == -1:
-            crop1 = i-1
-        elif  crop1 != -1 and crop2 == -1 and np.sum(image[:,i,0]) == 0:
-            crop2 =i
+        if np.sum(image[:, i, 0]) != 0 and crop1 == -1:
+            crop1 = i - 1
+        elif crop1 != -1 and crop2 == -1 and np.sum(image[:, i, 0]) == 0:
+            crop2 = i
     return crop1, crop2
+
 
 def crop_photo(image):
     len1, len2 = crop_photo_len(image)
     width1, width2 = crop_photo_width(image)
-    return image[len1:len2,width1:width2,:]
+    return image[len1:len2, width1:width2, :]
 
 
 def divide_parts(image, landmarks):
@@ -102,7 +105,7 @@ def divide_parts(image, landmarks):
         "forehead": [162, 21, 54, 103, 67, 109, 10, 338, 297, 332, 284, 251, 389, 356, 264, 372, 383, 300, 293, 334,
                      296, 336, 9, 107, 66, 105, 63, 70, 156, 139]
 
-        }
+    }
     im_lst = []
     copy = np.copy(image)
     for i in list(border_dict.keys())[4:]:
@@ -138,4 +141,3 @@ def exclude_polygon(landmarks, lst, image, typ):
 
 image, landmarks = landmark_detection("sample.jpg")
 new = divide_parts(image, landmarks)
-
