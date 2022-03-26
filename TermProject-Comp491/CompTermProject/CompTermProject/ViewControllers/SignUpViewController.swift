@@ -16,8 +16,12 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func SignUpButtonPressed(_ sender: Any) {
-        guard let email = emailField.text,let password = passwordField.text else{
+        guard let email = emailField.text,let password = passwordField.text,let passwordAgain = passwordAgainField.text else{
             print("Empty Fields")
+            return
+        }
+        if(password != passwordAgain){
+            print("Password Check Doesn't match")
             return
         }
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
