@@ -10,6 +10,8 @@ import UIKit
 class RecomendationsViewController: UIViewController {
 
     var productDataSource = ProductDataSource.productDataSource;
+    
+    
     @IBOutlet weak var productsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -62,9 +64,9 @@ extension RecomendationsViewController: UITableViewDataSource {
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductsTableViewCell
-            let event = productDataSource.getProductWithIndex(index: 0)
-            cell.ProductName.text = "ProdName"
-            cell.productAttributes.text = "Attributes"
+            let product = productDataSource.getProductWithIndex(index: getRealIndex(indexPath: indexPath))
+            cell.ProductName.text = product?.prodName
+            cell.productAttributes.text = product?.usage
             cell.productAttributes.textColor = UIColor.cyan
             return cell
         }

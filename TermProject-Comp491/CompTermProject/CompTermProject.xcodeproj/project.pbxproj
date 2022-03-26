@@ -13,6 +13,7 @@
 		790D3A0927DB62D2005E5027 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D3A0827DB62D2005E5027 /* ProductsTableViewCell.swift */; };
 		790D3A0B27DB63C9005E5027 /* RecomendationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D3A0A27DB63C9005E5027 /* RecomendationsViewController.swift */; };
 		790D3A0D27DB6964005E5027 /* FirstCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D3A0C27DB6964005E5027 /* FirstCameraViewController.swift */; };
+		791A361227EB12D0001D9C13 /* surveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791A361127EB12D0001D9C13 /* surveyViewController.swift */; };
 		796A05ED27D60029009E0DAB /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A05EC27D60029009E0DAB /* Product.swift */; };
 		796A05EF27D60092009E0DAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A05EE27D60092009E0DAB /* User.swift */; };
 		796FDBF827CF68A7007FC5CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796FDBF727CF68A7007FC5CA /* AppDelegate.swift */; };
@@ -21,6 +22,10 @@
 		796FDBFF27CF68A7007FC5CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796FDBFD27CF68A7007FC5CA /* Main.storyboard */; };
 		796FDC0127CF68A8007FC5CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 796FDC0027CF68A8007FC5CA /* Assets.xcassets */; };
 		796FDC0427CF68A8007FC5CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796FDC0227CF68A8007FC5CA /* LaunchScreen.storyboard */; };
+		797DDECA27EA04EB00B0FFE2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 797DDEC927EA04EB00B0FFE2 /* FirebaseAuth */; };
+		797DDECC27EA06D300B0FFE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797DDECB27EA06D300B0FFE2 /* LoginViewController.swift */; };
+		797DDECE27EA079100B0FFE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 797DDECD27EA079100B0FFE2 /* GoogleService-Info.plist */; };
+		797DDED027EA081F00B0FFE2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797DDECF27EA081F00B0FFE2 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,7 @@
 		790D3A0827DB62D2005E5027 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		790D3A0A27DB63C9005E5027 /* RecomendationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationsViewController.swift; sourceTree = "<group>"; };
 		790D3A0C27DB6964005E5027 /* FirstCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCameraViewController.swift; sourceTree = "<group>"; };
+		791A361127EB12D0001D9C13 /* surveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = surveyViewController.swift; sourceTree = "<group>"; };
 		796A05EC27D60029009E0DAB /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		796A05EE27D60092009E0DAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		796FDBF427CF68A7007FC5CA /* CompTermProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompTermProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +46,9 @@
 		796FDC0027CF68A8007FC5CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		796FDC0327CF68A8007FC5CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		796FDC0527CF68A8007FC5CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		797DDECB27EA06D300B0FFE2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		797DDECD27EA079100B0FFE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		797DDECF27EA081F00B0FFE2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				797DDECA27EA04EB00B0FFE2 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +70,9 @@
 				79074E8527D7672B000AB284 /* CameraViewController.swift */,
 				790D3A0A27DB63C9005E5027 /* RecomendationsViewController.swift */,
 				790D3A0C27DB6964005E5027 /* FirstCameraViewController.swift */,
+				797DDECB27EA06D300B0FFE2 /* LoginViewController.swift */,
+				797DDECF27EA081F00B0FFE2 /* SignUpViewController.swift */,
+				791A361127EB12D0001D9C13 /* surveyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -111,6 +124,7 @@
 				796FDC0227CF68A8007FC5CA /* LaunchScreen.storyboard */,
 				796FDC0527CF68A8007FC5CA /* Info.plist */,
 				0FDCD2CB27DF404600BF38C0 /* OurUITextField.swift */,
+				797DDECD27EA079100B0FFE2 /* GoogleService-Info.plist */,
 			);
 			path = CompTermProject;
 			sourceTree = "<group>";
@@ -131,6 +145,9 @@
 			dependencies = (
 			);
 			name = CompTermProject;
+			packageProductDependencies = (
+				797DDEC927EA04EB00B0FFE2 /* FirebaseAuth */,
+			);
 			productName = CompTermProject;
 			productReference = 796FDBF427CF68A7007FC5CA /* CompTermProject.app */;
 			productType = "com.apple.product-type.application";
@@ -159,6 +176,9 @@
 				Base,
 			);
 			mainGroup = 796FDBEB27CF68A7007FC5CA;
+			packageReferences = (
+				797DDEC827EA04EB00B0FFE2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 796FDBF527CF68A7007FC5CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -174,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				796FDC0427CF68A8007FC5CA /* LaunchScreen.storyboard in Resources */,
+				797DDECE27EA079100B0FFE2 /* GoogleService-Info.plist in Resources */,
 				796FDC0127CF68A8007FC5CA /* Assets.xcassets in Resources */,
 				796FDBFF27CF68A7007FC5CA /* Main.storyboard in Resources */,
 			);
@@ -186,6 +207,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				791A361227EB12D0001D9C13 /* surveyViewController.swift in Sources */,
+				797DDECC27EA06D300B0FFE2 /* LoginViewController.swift in Sources */,
 				790D3A0627DB6016005E5027 /* ProductDataSource.swift in Sources */,
 				796FDBFC27CF68A7007FC5CA /* ViewController.swift in Sources */,
 				796A05ED27D60029009E0DAB /* Product.swift in Sources */,
@@ -196,6 +219,7 @@
 				0FDCD2CC27DF404600BF38C0 /* OurUITextField.swift in Sources */,
 				796FDBFA27CF68A7007FC5CA /* SceneDelegate.swift in Sources */,
 				79074E8627D7672B000AB284 /* CameraViewController.swift in Sources */,
+				797DDED027EA081F00B0FFE2 /* SignUpViewController.swift in Sources */,
 				790D3A0B27DB63C9005E5027 /* RecomendationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,9 +369,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CompTermProject;
+				DEVELOPMENT_TEAM = KN7B2K65RX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CompTermProject/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CompTermProject;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Let Us use your camera ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -359,7 +384,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Erenc-o.CompTermProject";
+				PRODUCT_BUNDLE_IDENTIFIER = Erenco.CompTermProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -374,9 +399,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CompTermProject;
+				DEVELOPMENT_TEAM = KN7B2K65RX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CompTermProject/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CompTermProject;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Let Us use your camera ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -388,7 +414,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Erenc-o.CompTermProject";
+				PRODUCT_BUNDLE_IDENTIFIER = Erenco.CompTermProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -418,6 +444,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		797DDEC827EA04EB00B0FFE2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		797DDEC927EA04EB00B0FFE2 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 797DDEC827EA04EB00B0FFE2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 796FDBEC27CF68A7007FC5CA /* Project object */;
 }

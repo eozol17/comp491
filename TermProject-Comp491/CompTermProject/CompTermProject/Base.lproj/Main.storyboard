@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vgf-WK-4TT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vgf-WK-4TT">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DSS-PA-Bav">
-                                <rect key="frame" x="35" y="88" width="320" height="538"/>
+                                <rect key="frame" x="35.333333333333343" y="88" width="319.33333333333326" height="537.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DSS-PA-Bav" secondAttribute="height" multiplier="22:37" id="Q0V-y7-yBP"/>
                                 </constraints>
@@ -83,7 +83,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="&quot;MyTabelViewCell&quot;" rowHeight="136" id="j0d-AX-2ZI" customClass="ProductsTableViewCell" customModule="CompTermProject" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="136" id="j0d-AX-2ZI" customClass="ProductsTableViewCell" customModule="CompTermProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="358" height="136"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j0d-AX-2ZI" id="vGy-ET-uGe">
@@ -224,10 +224,10 @@
             </objects>
             <point key="canvasLocation" x="-720.28985507246387" y="1711.6071428571429"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Test Tab Bar Controller-->
         <scene sceneID="5Xi-Re-W6O">
             <objects>
-                <tabBarController id="d16-4Q-L9l" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" id="d16-4Q-L9l" customClass="FPRTestTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="x8V-Gu-g7f"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7NI-QK-0M7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -317,7 +317,7 @@
         <!--Login-->
         <scene sceneID="5jB-uD-I09">
             <objects>
-                <viewController title="Login" id="MEn-E9-klX" customClass="ViewController" customModule="CompTermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" id="MEn-E9-klX" customClass="LoginViewController" customModule="CompTermProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Aq-1E-LJZ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -372,7 +372,7 @@
                                     <color key="baseBackgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="d16-4Q-L9l" kind="show" id="vqw-RT-SDK"/>
+                                    <action selector="loginTapped:" destination="MEn-E9-klX" eventType="touchUpInside" id="eKw-gW-Ggv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbN-oE-TSK">
@@ -422,6 +422,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RQ3-0T-kXo"/>
+                    <connections>
+                        <outlet property="emailField" destination="Lon-vy-uYL" id="7ih-P5-kEw"/>
+                        <outlet property="loginButton" destination="BJh-06-uif" id="lAX-ho-9wV"/>
+                        <outlet property="passwordField" destination="HdT-dK-VHb" id="rfA-uI-jPO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMb-hJ-hVN" sceneMemberID="firstResponder"/>
             </objects>
@@ -465,23 +470,7 @@
                                     <constraint firstAttribute="width" constant="120" id="yTc-vW-Ozf"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="UPLOAD" cornerStyle="capsule" titleAlignment="center">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
-                                    <color key="baseBackgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYM-hn-NfM">
-                                <rect key="frame" x="135" y="595" width="120" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="Bsb-5c-fGq"/>
-                                    <constraint firstAttribute="height" constant="54" id="eW9-sp-P3m"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="UPLOAD" cornerStyle="capsule" titleAlignment="center">
+                                <buttonConfiguration key="configuration" style="filled" title="Continue" cornerStyle="capsule" titleAlignment="center">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
@@ -490,7 +479,26 @@
                                     <color key="baseBackgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="twQ-RD-k2F" kind="show" id="qjZ-Qx-nOZ"/>
+                                    <segue destination="twQ-RD-k2F" kind="show" id="Ibf-bA-3t4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYM-hn-NfM">
+                                <rect key="frame" x="135" y="595" width="120" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Bsb-5c-fGq"/>
+                                    <constraint firstAttribute="height" constant="54" id="eW9-sp-P3m"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Take Photo" cornerStyle="capsule" titleAlignment="center">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
+                                    <color key="baseBackgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="TappedCameraButton:" destination="d2D-kf-1W6" eventType="touchUpInside" id="2w0-zN-wjE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -518,6 +526,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="bDh-xM-GCy"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="CamerButton" destination="WYM-hn-NfM" id="REN-4C-d2X"/>
+                        <outlet property="CameraView" destination="228-2f-UoE" id="JHq-WN-lI3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YkQ-9s-xnX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -541,7 +553,7 @@
         <!--Survey1-->
         <scene sceneID="IYQ-Du-NiF">
             <objects>
-                <viewController title="Survey1" id="twQ-RD-k2F" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Survey1" title="Survey1" id="twQ-RD-k2F" customClass="surveyViewController" customModule="CompTermProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YfS-FJ-n6c">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -612,7 +624,7 @@
         <!--Sign Up-->
         <scene sceneID="9LH-9S-GRr">
             <objects>
-                <viewController title="Sign Up" id="bf0-kw-jTQ" customClass="ViewController" customModule="CompTermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Sign Up" id="bf0-kw-jTQ" customClass="SignUpViewController" customModule="CompTermProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oph-iL-fKB">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -633,7 +645,10 @@
                                     <color key="baseBackgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="d2D-kf-1W6" kind="show" id="QLh-e0-IXF"/>
+                                    <action selector="SignUpButton:" destination="fb6-m3-tkF" eventType="touchUpInside" id="0hE-Ik-ffr"/>
+                                    <action selector="SignUpButtonPressed:" destination="bf0-kw-jTQ" eventType="touchUpInside" id="iNd-dl-5kP"/>
+                                    <action selector="SignUpTouched:" destination="fb6-m3-tkF" eventType="touchUpInside" id="iQi-un-CWf"/>
+                                    <action selector="signUpButton:" destination="fb6-m3-tkF" eventType="touchUpInside" id="TxP-Ro-9Kd"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f8n-W3-DrA" customClass="OurUITextField" customModule="CompTermProject" customModuleProvider="target">
@@ -712,8 +727,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c9F-1W-7eH"/>
+                    <connections>
+                        <outlet property="SignUpButton" destination="TCf-pm-NHs" id="2NR-rv-Cfg"/>
+                        <outlet property="emailField" destination="f8n-W3-DrA" id="VVV-ZH-Wmr"/>
+                        <outlet property="passwordAgainField" destination="xFB-NU-l0C" id="j3v-8o-K0X"/>
+                        <outlet property="passwordField" destination="lbt-J8-Gp6" id="ANg-he-wmb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o7Q-02-2EP" sceneMemberID="firstResponder"/>
+                <exit id="fb6-m3-tkF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-5955" y="309"/>
         </scene>
@@ -789,9 +811,6 @@
             <point key="canvasLocation" x="-2845" y="309"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="C7N-mP-gCw"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Untitled-8-1" width="4500" height="4500"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
