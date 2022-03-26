@@ -90,34 +90,56 @@
                                             <rect key="frame" x="0.0" y="0.0" width="358" height="136"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ZY-5h-ob8">
-                                                    <rect key="frame" x="20" y="27" width="124" height="82"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95i-u0-0Wq">
-                                                    <rect key="frame" x="178" y="27" width="50" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attributes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deC-sm-J1f">
+                                                    <rect key="frame" x="172" y="56" width="166" height="68"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Attributes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deC-sm-J1f">
-                                                    <rect key="frame" x="172" y="56" width="166" height="68"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OtV-91-PQR">
+                                                    <rect key="frame" x="11" y="0.0" width="133" height="136"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="133" id="S8o-H7-2Lr"/>
+                                                        <constraint firstAttribute="height" constant="136" id="zXn-9f-6FW"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95i-u0-0Wq">
+                                                    <rect key="frame" x="154" y="11" width="204" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="g7R-Cv-WuB"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="95i-u0-0Wq" firstAttribute="leading" secondItem="OtV-91-PQR" secondAttribute="trailing" constant="10" id="BCw-2Y-HOY"/>
+                                                <constraint firstAttribute="bottom" secondItem="deC-sm-J1f" secondAttribute="bottom" constant="12" id="FYu-4M-JqU"/>
+                                                <constraint firstAttribute="trailing" secondItem="deC-sm-J1f" secondAttribute="trailing" constant="20" symbolic="YES" id="ID7-LA-3iY"/>
+                                                <constraint firstItem="deC-sm-J1f" firstAttribute="leading" secondItem="OtV-91-PQR" secondAttribute="trailing" constant="28" id="XiO-pm-3gf"/>
+                                                <constraint firstItem="OtV-91-PQR" firstAttribute="leading" secondItem="vGy-ET-uGe" secondAttribute="leading" constant="11" id="fWx-Un-iF0"/>
+                                                <constraint firstItem="deC-sm-J1f" firstAttribute="top" secondItem="95i-u0-0Wq" secondAttribute="bottom" constant="24" id="nIi-mC-53X"/>
+                                                <constraint firstAttribute="trailing" secondItem="95i-u0-0Wq" secondAttribute="trailing" id="qxI-ab-jgd"/>
+                                                <constraint firstItem="95i-u0-0Wq" firstAttribute="top" secondItem="vGy-ET-uGe" secondAttribute="top" constant="11" id="rRf-Mi-l5s"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="OtV-91-PQR" firstAttribute="top" secondItem="j0d-AX-2ZI" secondAttribute="top" id="Wfr-4B-KG3"/>
+                                            <constraint firstAttribute="bottom" secondItem="OtV-91-PQR" secondAttribute="bottom" id="ajR-WQ-cHc"/>
+                                        </constraints>
                                         <connections>
-                                            <outlet property="Image" destination="3ZY-5h-ob8" id="cme-Zr-Cdu"/>
+                                            <outlet property="ProductImage" destination="OtV-91-PQR" id="wx6-HK-ljQ"/>
                                             <outlet property="ProductName" destination="95i-u0-0Wq" id="gx5-vv-JIp"/>
                                             <outlet property="productAttributes" destination="deC-sm-J1f" id="pei-P0-sSF"/>
                                             <segue destination="0HX-TJ-ECZ" kind="show" id="FHG-yy-o2m"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BZU-Bp-ybr" id="qtc-Ml-IEh"/>
+                                    <outlet property="delegate" destination="BZU-Bp-ybr" id="Kgz-1e-MdR"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q1F-gW-A4p"/>

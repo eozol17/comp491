@@ -9,18 +9,18 @@ import Foundation
 import CoreLocation
 
 
-class ProductDataSource: ObservableObject {
-    private var productArray: [product?] = []
-    static var productDataSource = ProductDataSource()
+struct ProductDataSource {
+    private var productArray: [Product] = []
+    //static var productDataSource = ProductDataSource()
     
     init(){
         
-        productArray.append(product(prodName: "prodName1", imageName: "Image1", usage: "Usage Description1"))
-        productArray.append(product(prodName: "prodName", imageName: "Image", usage: "Usage Description"))
+        productArray.append(Product(prodName: "Sebamed", imageName: "sebamed", usage: "Usage Description1"))
+        productArray.append(Product(prodName: "Avene", imageName: "avene", usage: "Usage Description"))
                           
     }
     
-    func getProductWithIndex(index: Int) -> product? {
+    func getProductWithIndex(index: Int) -> Product {
             return productArray[index]
     }
     
@@ -29,7 +29,7 @@ class ProductDataSource: ObservableObject {
     }
     
     
-    func createProduct(event: product? ){
+    func createProduct(event: Product? ){
 
     }
     
