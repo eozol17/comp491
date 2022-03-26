@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,7 +36,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nlt-JS-0qk"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="DSS-PA-Bav" firstAttribute="centerX" secondItem="nlt-JS-0qk" secondAttribute="centerX" id="Iv1-ke-8S4"/>
                             <constraint firstItem="DSS-PA-Bav" firstAttribute="top" secondItem="nlt-JS-0qk" secondAttribute="top" id="dPK-u3-CK5"/>
@@ -62,7 +63,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="vm6-3S-X5K"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                     </view>
                     <navigationItem key="navigationItem" id="uKF-EU-0Ci"/>
                 </viewController>
@@ -81,7 +82,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yny-vV-bDI">
                                 <rect key="frame" x="16" y="88" width="358" height="673"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="136" id="j0d-AX-2ZI" customClass="ProductsTableViewCell" customModule="CompTermProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="358" height="136"/>
@@ -124,6 +126,7 @@
                                                 <constraint firstItem="95i-u0-0Wq" firstAttribute="top" secondItem="vGy-ET-uGe" secondAttribute="top" constant="11" id="rRf-Mi-l5s"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstItem="OtV-91-PQR" firstAttribute="top" secondItem="j0d-AX-2ZI" secondAttribute="top" id="Wfr-4B-KG3"/>
                                             <constraint firstAttribute="bottom" secondItem="OtV-91-PQR" secondAttribute="bottom" id="ajR-WQ-cHc"/>
@@ -143,7 +146,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q1F-gW-A4p"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                     </view>
                     <navigationItem key="navigationItem" id="jad-jr-0Nj"/>
                     <connections>
@@ -162,10 +165,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rFg-ba-Hhc">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFg-ba-Hhc">
                                 <rect key="frame" x="16" y="106" width="358" height="383.66666666666669"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er e</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -173,7 +176,7 @@
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e5j-C4-zBT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                     </view>
                     <navigationItem key="navigationItem" id="T2f-x7-OfZ"/>
                 </viewController>
@@ -227,7 +230,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zKc-tF-pIQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="3IU-kv-kQH" firstAttribute="top" secondItem="5cy-HO-ndf" secondAttribute="bottom" constant="50" id="EUz-zz-ues"/>
                             <constraint firstItem="CZc-J7-67m" firstAttribute="top" secondItem="zKc-tF-pIQ" secondAttribute="top" id="KjG-IR-Cia"/>
@@ -346,6 +349,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Lon-vy-uYL" customClass="OurUITextField" customModule="CompTermProject" customModuleProvider="target">
                                 <rect key="frame" x="68" y="238" width="254" height="34"/>
+                                <color key="backgroundColor" name="login signup textbox"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lon-vy-uYL" secondAttribute="height" multiplier="127:17" id="wDb-Hq-lcS"/>
                                 </constraints>
@@ -363,6 +367,7 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HdT-dK-VHb" customClass="OurUITextField" customModule="CompTermProject" customModuleProvider="target">
                                 <rect key="frame" x="68" y="302" width="254" height="34"/>
+                                <color key="backgroundColor" name="login signup textbox"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HdT-dK-VHb" secondAttribute="height" multiplier="127:17" id="CWu-T6-EeU"/>
                                 </constraints>
@@ -387,11 +392,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="LOGIN" cornerStyle="capsule" titleAlignment="center">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="login signup button"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
-                                    <color key="baseBackgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" name="login signup text"/>
+                                    <color key="baseBackgroundColor" name="login signup button"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="loginTapped:" destination="MEn-E9-klX" eventType="touchUpInside" id="eKw-gW-Ggv"/>
@@ -406,11 +411,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="SIGN UP" cornerStyle="capsule" titleAlignment="center">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="login signup button"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
-                                    <color key="baseBackgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" name="login signup text"/>
+                                    <color key="baseBackgroundColor" name="login signup button"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="bf0-kw-jTQ" kind="show" id="fnA-mQ-mBb"/>
@@ -478,11 +483,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="PICK IMAGE" cornerStyle="capsule" titleAlignment="center">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="login signup button"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
-                                    <color key="baseBackgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" name="login signup text"/>
+                                    <color key="baseBackgroundColor" name="login signup button"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKh-LL-824">
@@ -494,11 +499,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Continue" cornerStyle="capsule" titleAlignment="center">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="login signup button"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
-                                    <color key="baseBackgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" name="login signup text"/>
+                                    <color key="baseBackgroundColor" name="login signup button"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="twQ-RD-k2F" kind="show" id="Ibf-bA-3t4"/>
@@ -513,11 +518,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Take Photo" cornerStyle="capsule" titleAlignment="center">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="login signup button"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
-                                    <color key="baseBackgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" name="login signup text"/>
+                                    <color key="baseBackgroundColor" name="login signup button"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="TappedCameraButton:" destination="d2D-kf-1W6" eventType="touchUpInside" id="2w0-zN-wjE"/>
@@ -613,11 +618,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="CONFIRM" cornerStyle="capsule" titleAlignment="center">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="login signup button"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
-                                    <color key="baseBackgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" name="login signup text"/>
+                                    <color key="baseBackgroundColor" name="login signup button"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="rb9-b7-3Nk" kind="show" id="1aJ-Ff-Cy8"/>
@@ -663,11 +668,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="SIGN UP" cornerStyle="capsule" titleAlignment="center">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="login signup button"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
-                                    <color key="baseBackgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" name="login signup text"/>
+                                    <color key="baseBackgroundColor" name="login signup button"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="SignUpButton:" destination="fb6-m3-tkF" eventType="touchUpInside" id="0hE-Ik-ffr"/>
@@ -678,6 +683,7 @@
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="f8n-W3-DrA" customClass="OurUITextField" customModule="CompTermProject" customModuleProvider="target">
                                 <rect key="frame" x="68" y="238" width="254" height="34"/>
+                                <color key="backgroundColor" name="login signup textbox"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="f8n-W3-DrA" secondAttribute="height" multiplier="127:17" id="0Dd-pg-xwe"/>
                                 </constraints>
@@ -695,6 +701,7 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lbt-J8-Gp6" customClass="OurUITextField" customModule="CompTermProject" customModuleProvider="target">
                                 <rect key="frame" x="68" y="303" width="254" height="34"/>
+                                <color key="backgroundColor" name="login signup textbox"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lbt-J8-Gp6" secondAttribute="height" multiplier="127:17" id="Uf7-QZ-bnf"/>
                                 </constraints>
@@ -712,6 +719,7 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-enter Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xFB-NU-l0C" customClass="OurUITextField" customModule="CompTermProject" customModuleProvider="target">
                                 <rect key="frame" x="67.666666666666686" y="367" width="255" height="34"/>
+                                <color key="backgroundColor" name="login signup textbox"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xFB-NU-l0C" secondAttribute="height" multiplier="15:2" id="xmP-V5-BS7"/>
                                 </constraints>
@@ -802,11 +810,11 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="CONFIRM" cornerStyle="capsule" titleAlignment="center">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" name="login signup button"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                    <color key="baseForegroundColor" systemColor="systemGray6Color"/>
-                                    <color key="baseBackgroundColor" red="0.56241255999999995" green="0.23205220700000001" blue="0.94129997489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="baseForegroundColor" name="login signup text"/>
+                                    <color key="baseBackgroundColor" name="login signup button"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="d16-4Q-L9l" kind="show" id="C7N-mP-gCw"/>
@@ -844,11 +852,17 @@
         <image name="mail" catalog="system" width="128" height="93"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="skinmate logo-1" width="4500" height="2827"/>
+        <namedColor name="login signup button">
+            <color red="0.56514388319999997" green="0.2313639224" blue="0.93810540440000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="login signup text">
+            <color red="0.94906502960000005" green="0.94882327320000004" blue="0.96866291760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="login signup textbox">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
