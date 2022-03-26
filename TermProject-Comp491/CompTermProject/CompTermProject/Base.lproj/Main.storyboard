@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vgf-WK-4TT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vgf-WK-4TT">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DSS-PA-Bav">
-                                <rect key="frame" x="35.333333333333343" y="88" width="319.33333333333326" height="537.33333333333337"/>
+                                <rect key="frame" x="35" y="88" width="320" height="538"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DSS-PA-Bav" secondAttribute="height" multiplier="22:37" id="Q0V-y7-yBP"/>
                                 </constraints>
@@ -416,19 +416,19 @@
                                     <segue destination="bf0-kw-jTQ" kind="show" id="fnA-mQ-mBb"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-8-1" translatesAutoresizingMaskIntoConstraints="NO" id="Sdv-Qx-bXh">
-                                <rect key="frame" x="-8" y="11" width="406" height="283"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skinmate logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="Sdv-Qx-bXh">
+                                <rect key="frame" x="93.666666666666686" y="96" width="203" height="115"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="406" id="Qa7-yB-esR"/>
-                                    <constraint firstAttribute="height" constant="283" id="div-jn-huU"/>
+                                    <constraint firstAttribute="width" constant="203" id="Qa7-yB-esR"/>
+                                    <constraint firstAttribute="height" constant="115" id="div-jn-huU"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="I60-Tm-EYS"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="I60-Tm-EYS" firstAttribute="bottom" secondItem="Sdv-Qx-bXh" secondAttribute="bottom" constant="516" id="4Vb-8s-IGz"/>
-                            <constraint firstItem="I60-Tm-EYS" firstAttribute="top" secondItem="Sdv-Qx-bXh" secondAttribute="top" constant="33" id="Dx4-0W-Lcl"/>
+                            <constraint firstItem="I60-Tm-EYS" firstAttribute="bottom" secondItem="Sdv-Qx-bXh" secondAttribute="bottom" constant="599" id="4Vb-8s-IGz"/>
+                            <constraint firstItem="I60-Tm-EYS" firstAttribute="top" secondItem="Sdv-Qx-bXh" secondAttribute="top" constant="-52" id="Dx4-0W-Lcl"/>
                             <constraint firstItem="XbN-oE-TSK" firstAttribute="centerX" secondItem="I60-Tm-EYS" secondAttribute="centerX" id="FGN-JP-9gL"/>
                             <constraint firstItem="XbN-oE-TSK" firstAttribute="centerX" secondItem="BJh-06-uif" secondAttribute="centerX" id="V2U-hA-z6N"/>
                             <constraint firstItem="BJh-06-uif" firstAttribute="width" secondItem="XbN-oE-TSK" secondAttribute="width" id="XGh-RH-DqG"/>
@@ -452,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gMb-hJ-hVN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6771.0144927536239" y="308.70535714285711"/>
+            <point key="canvasLocation" x="-6772.3076923076924" y="308.53080568720378"/>
         </scene>
         <!--Image Picking-->
         <scene sceneID="Yaf-F7-Tm1">
@@ -564,6 +564,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y4c-zi-SOS">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qeD-tr-7Ir">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="MEn-E9-klX" kind="relationship" relationship="rootViewController" id="13f-Df-qGS"/>
                     </connections>
@@ -724,11 +727,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-8-1" translatesAutoresizingMaskIntoConstraints="NO" id="pur-N6-msX">
-                                <rect key="frame" x="-8" y="11" width="406" height="283"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skinmate logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="pur-N6-msX">
+                                <rect key="frame" x="93.666666666666686" y="96" width="203" height="115"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="406" id="Eug-gJ-w21"/>
-                                    <constraint firstAttribute="height" constant="283" id="PsS-Ei-6KT"/>
+                                    <constraint firstAttribute="width" constant="203" id="Eug-gJ-w21"/>
+                                    <constraint firstAttribute="height" constant="115" id="PsS-Ei-6KT"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -736,12 +739,12 @@
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="xFB-NU-l0C" firstAttribute="centerX" secondItem="arl-79-yYn" secondAttribute="centerX" id="9f8-a5-Okq"/>
-                            <constraint firstItem="arl-79-yYn" firstAttribute="bottom" secondItem="pur-N6-msX" secondAttribute="bottom" constant="516" id="B94-v9-ekf"/>
+                            <constraint firstItem="arl-79-yYn" firstAttribute="bottom" secondItem="pur-N6-msX" secondAttribute="bottom" constant="599" id="B94-v9-ekf"/>
                             <constraint firstItem="lbt-J8-Gp6" firstAttribute="centerX" secondItem="arl-79-yYn" secondAttribute="centerX" id="HBl-bh-QGn"/>
                             <constraint firstItem="lbt-J8-Gp6" firstAttribute="top" secondItem="f8n-W3-DrA" secondAttribute="bottom" constant="31" id="Ncq-Qs-HL7"/>
                             <constraint firstItem="TCf-pm-NHs" firstAttribute="top" secondItem="xFB-NU-l0C" secondAttribute="bottom" constant="44" id="drR-lM-0tT"/>
                             <constraint firstItem="f8n-W3-DrA" firstAttribute="centerX" secondItem="arl-79-yYn" secondAttribute="centerX" id="fAw-yr-QT0"/>
-                            <constraint firstItem="arl-79-yYn" firstAttribute="top" secondItem="pur-N6-msX" secondAttribute="top" constant="33" id="hl3-Pv-kBk"/>
+                            <constraint firstItem="arl-79-yYn" firstAttribute="top" secondItem="pur-N6-msX" secondAttribute="top" constant="-52" id="hl3-Pv-kBk"/>
                             <constraint firstItem="arl-79-yYn" firstAttribute="bottom" secondItem="TCf-pm-NHs" secondAttribute="bottom" priority="250" constant="311" id="hmJ-ZY-J51"/>
                             <constraint firstItem="xFB-NU-l0C" firstAttribute="top" secondItem="lbt-J8-Gp6" secondAttribute="bottom" constant="30" id="jdm-hs-YF4"/>
                             <constraint firstItem="pur-N6-msX" firstAttribute="centerX" secondItem="arl-79-yYn" secondAttribute="centerX" id="kP4-nC-hsN"/>
@@ -834,13 +837,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Untitled-8-1" width="4500" height="4500"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="face.smiling" catalog="system" width="128" height="121"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="lock" catalog="system" width="128" height="128"/>
         <image name="mail" catalog="system" width="128" height="93"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="skinmate logo-1" width="4500" height="2827"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
