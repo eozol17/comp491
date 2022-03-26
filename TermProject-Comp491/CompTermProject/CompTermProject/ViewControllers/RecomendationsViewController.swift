@@ -8,8 +8,9 @@
 import UIKit
 
 class RecomendationsViewController: UIViewController {
-
-    var productDataSource = ProductDataSource.productDataSource;
+    
+   // var productDataSource = ProductDataSource.productDataSource;
+    var productDataSource = ProductDataSource()
     @IBOutlet weak var productsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -38,8 +39,12 @@ class RecomendationsViewController: UIViewController {
 //                    let product = productDataSource.getProductWithIndex(index: 0)
 //                }
         
-        
+        let cell = sender as! ProductsTableViewCell
+        if let indexPath = self.productsTableView.indexPath(for: cell) {
+            let product = productDataSource.getProductWithIndex(index: getRealIndex(indexPath: indexPath))
+        }
     }
+    
     func getRealIndex(indexPath: IndexPath) -> Int {
         let realIndex = indexPath.row.quotientAndRemainder(dividingBy: productDataSource.getNumberOfProducts()).remainder
                 return realIndex
@@ -52,19 +57,16 @@ extension RecomendationsViewController: UITableViewDataSource {
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            if (section == 0) {
-                return 10
-            } else if (section == 1) {
-                return 50
-            }
-            return 0
+            return productDataSource.getNumberOfProducts()
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductsTableViewCell
-            let event = productDataSource.getProductWithIndex(index: 0)
-            cell.ProductName.text = "ProdName"
-            cell.productAttributes.text = "Attributes"
+            let product = productDataSource.getProductWithIndex(index: getRealIndex(indexPath: indexPath))
+            //let event = productDataSource.getProductWithIndex(index: 0)
+            cell.ProductName.text = product.prodName
+            cell.ProductImage.image = UIImage(named: product.imageName)
+            cell.productAttributes.text = product.usage
             cell.productAttributes.textColor = UIColor.cyan
             return cell
         }
