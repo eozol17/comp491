@@ -13,20 +13,23 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailField: OurUITextField!
     @IBOutlet weak var passwordField: OurUITextField!
     @IBOutlet weak var passwordAgainField: OurUITextField!
+    @IBOutlet weak var warningLabel: UILabel!
     
     
     @IBAction func SignUpButtonPressed(_ sender: Any) {
         guard let email = emailField.text,let password = passwordField.text,let passwordAgain = passwordAgainField.text else{
-            print("Empty Fields")
+            self.warningLabel.text = "Empty Fields"
             return
         }
         if(password != passwordAgain){
-            print("Password Check Doesn't match")
+            self.warningLabel.text = "Password Check Doesn't match"
             return
         }
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             
             guard let user = authResult?.user, error == nil else {
+                self.warningLabel.text = error!.localizedDescription
+                self.warningLabel.isHidden = false
                 print(error!.localizedDescription)
               return
             }

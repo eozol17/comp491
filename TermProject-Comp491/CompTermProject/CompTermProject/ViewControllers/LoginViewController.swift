@@ -6,10 +6,11 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,UITextFieldDelegate {
 
+    @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
     @IBOutlet weak var emailField: OurUITextField!
@@ -22,11 +23,12 @@ class LoginViewController: UIViewController {
     }
     @IBAction func loginTapped(_ sender: Any) {
         guard let email = emailField.text, let password = passwordField.text else {
-          return
+            return
         }
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             guard error == nil else {
-                
+                self?.warningLabel.text = error!.localizedDescription
+                self?.warningLabel.isHidden = false
                 print(error!.localizedDescription)
               return
             }
