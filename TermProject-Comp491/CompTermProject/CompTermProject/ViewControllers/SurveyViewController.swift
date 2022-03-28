@@ -38,7 +38,8 @@ class surveyViewController: UIViewController {
         db.collection("users").document(userID).setData([
             "first": name,
             "surname": lastName,
-            "birthday": ""
+//          Age Formatting should be changed. 
+            "birthday": age
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
