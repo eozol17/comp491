@@ -673,6 +673,7 @@
                         <outlet property="ageField" destination="z2u-Jn-9aJ" id="LkR-bq-4br"/>
                         <outlet property="confirmButton" destination="YUJ-JQ-ine" id="Pwh-z1-Pcf"/>
                         <outlet property="lastName" destination="ENz-xm-nO7" id="o9O-Zo-Rau"/>
+                        <outlet property="lastNameField" destination="GQ7-CL-mfC" id="XFp-KB-x0m"/>
                         <outlet property="nameField" destination="2j2-0m-GdK" id="PVd-bw-n20"/>
                     </connections>
                 </viewController>

@@ -13,6 +13,7 @@ import FirebaseStorage
 class surveyViewController: UIViewController {
     
     @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var lastName: UILabel!
     @IBOutlet weak var ageField: UITextField!
     @IBOutlet weak var confirmButton: UIButton!
@@ -27,7 +28,7 @@ class surveyViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func confirmPressed(_ sender: Any) {
-        guard let name = nameField.text,let lastName = lastName.text,let  age = ageField.text else{
+        guard let name = nameField.text,let lastName = lastNameField.text,let  age = ageField.text else{
             return
         }
         guard let userID = Auth.auth().currentUser?.uid else{
@@ -35,11 +36,12 @@ class surveyViewController: UIViewController {
             return
         }
         // Add a new document with a generated ID
+        
         db.collection("users").document(userID).setData([
             "first": name,
             "surname": lastName,
 //          Age Formatting should be changed. 
-            "birthday": age
+            "birthday": ""
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
