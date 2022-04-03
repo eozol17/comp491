@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct product{
+struct Product{
     let prodName: String
     let imageName: String
     let usage: String
