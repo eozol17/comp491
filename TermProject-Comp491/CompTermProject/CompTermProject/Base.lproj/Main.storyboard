@@ -651,14 +651,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z2u-Jn-9aJ">
-                                <rect key="frame" x="152" y="249" width="222" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjC-w6-1nb">
-                                <rect key="frame" x="58" y="249" width="43" height="29"/>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ge6-ja-nA4">
+                                <rect key="frame" x="0.0" y="341" width="390" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data Of Birth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjC-w6-1nb">
+                                <rect key="frame" x="126" y="304" width="138" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                 <nil key="textColor"/>
@@ -670,7 +668,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="giv-Od-SwB"/>
                     <connections>
-                        <outlet property="ageField" destination="z2u-Jn-9aJ" id="LkR-bq-4br"/>
                         <outlet property="confirmButton" destination="YUJ-JQ-ine" id="Pwh-z1-Pcf"/>
                         <outlet property="lastName" destination="ENz-xm-nO7" id="o9O-Zo-Rau"/>
                         <outlet property="lastNameField" destination="GQ7-CL-mfC" id="XFp-KB-x0m"/>
