@@ -651,17 +651,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ge6-ja-nA4">
-                                <rect key="frame" x="0.0" y="341" width="390" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data Of Birth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjC-w6-1nb">
-                                <rect key="frame" x="126" y="304" width="138" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hh7-44-ZnU"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -816,7 +805,7 @@
         <!--Survey1-->
         <scene sceneID="JqM-mv-NCJ">
             <objects>
-                <viewController title="Survey1" id="rb9-b7-3Nk" sceneMemberID="viewController">
+                <viewController title="Survey1" id="rb9-b7-3Nk" customClass="Survey_2_ViewController" customModule="CompTermProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tvW-1O-wKd">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -861,6 +850,25 @@
                                     <segue destination="d16-4Q-L9l" kind="show" id="C7N-mP-gCw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLd-1b-9wc">
+                                <rect key="frame" x="16" y="353" width="121" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="PostToRequest"/>
+                                <connections>
+                                    <action selector="PostUsed:" destination="fHo-3d-kmO" eventType="touchUpInside" id="GXd-4f-Fgu"/>
+                                    <action selector="postPressed:" destination="rb9-b7-3Nk" eventType="touchUpInside" id="4XL-wQ-L8m"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgK-jP-gDS">
+                                <rect key="frame" x="18" y="407" width="117" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Post to Funct1"/>
+                                <connections>
+                                    <action selector="post2:" destination="rb9-b7-3Nk" eventType="touchUpInside" id="YtK-Qh-yqE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ew5-Nw-G7C"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -879,8 +887,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2wm-Y9-tq6"/>
+                    <connections>
+                        <outlet property="post2" destination="NgK-jP-gDS" id="dqo-Fz-un4"/>
+                        <outlet property="postButton" destination="CLd-1b-9wc" id="fWu-kA-jR3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKP-6M-6g6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="fHo-3d-kmO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-2845" y="309"/>
         </scene>

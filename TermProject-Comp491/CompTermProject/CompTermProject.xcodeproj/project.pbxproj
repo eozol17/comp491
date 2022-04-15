@@ -25,6 +25,7 @@
 		792585C227F0947100054DA3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 792585C127F0947100054DA3 /* FirebaseStorage */; };
 		796A05ED27D60029009E0DAB /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A05EC27D60029009E0DAB /* Product.swift */; };
 		796A05EF27D60092009E0DAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A05EE27D60092009E0DAB /* User.swift */; };
+		796E1EA5280997F9008425CD /* Survey_2_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796E1EA4280997F9008425CD /* Survey_2_ViewController.swift */; };
 		796FDBF827CF68A7007FC5CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796FDBF727CF68A7007FC5CA /* AppDelegate.swift */; };
 		796FDBFA27CF68A7007FC5CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796FDBF927CF68A7007FC5CA /* SceneDelegate.swift */; };
 		796FDBFC27CF68A7007FC5CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796FDBFB27CF68A7007FC5CA /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 		791A361127EB12D0001D9C13 /* surveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = surveyViewController.swift; sourceTree = "<group>"; };
 		796A05EC27D60029009E0DAB /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		796A05EE27D60092009E0DAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		796E1EA4280997F9008425CD /* Survey_2_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey_2_ViewController.swift; sourceTree = "<group>"; };
 		796FDBF427CF68A7007FC5CA /* CompTermProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CompTermProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		796FDBF727CF68A7007FC5CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		796FDBF927CF68A7007FC5CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				797DDECB27EA06D300B0FFE2 /* LoginViewController.swift */,
 				797DDECF27EA081F00B0FFE2 /* SignUpViewController.swift */,
 				791A361127EB12D0001D9C13 /* surveyViewController.swift */,
+				796E1EA4280997F9008425CD /* Survey_2_ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				796FDBFA27CF68A7007FC5CA /* SceneDelegate.swift in Sources */,
 				79074E8627D7672B000AB284 /* CameraViewController.swift in Sources */,
 				797DDED027EA081F00B0FFE2 /* SignUpViewController.swift in Sources */,
+				796E1EA5280997F9008425CD /* Survey_2_ViewController.swift in Sources */,
 				790D3A0B27DB63C9005E5027 /* RecomendationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

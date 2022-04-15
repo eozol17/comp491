@@ -28,7 +28,7 @@ class surveyViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func confirmPressed(_ sender: Any) {
-        guard let name = nameField.text,let lastName = lastNameField.text,let  age = ageField.text else{
+        guard let name = nameField.text,let lastName = lastNameField.text else{
             return
         }
         guard let userID = Auth.auth().currentUser?.uid else{
