@@ -11,18 +11,20 @@ import Firebase
 import FirebaseFirestore
 
 
-struct ProductDataSource {
+class ProductDataSource {
     let db = Firestore.firestore()
-    private var productArray: [Product] = []
+    public var productArray: [Product]
     static var productDataSource = ProductDataSource()
     
     init(){
-        
+        productArray = []
         //Burda da productArray i doluruyoruz ancak 2 tane array de yapılabilir sabah akşam diye.
         print("sabah init")
-        print(AppendSabahDocument().description)
+        getSabahDocument()
         print("Akşam init")
-        print(getAksamDocument().description)
+        getAksamDocument()
+        print("Product Array")
+        print(productArray)
                           
     }
     
@@ -34,30 +36,14 @@ struct ProductDataSource {
         return productArray.count
     }
     
-    
-    
-    
-    
-//    func createProduct(product: Product? ){
-//    }
-    
-    
-    
-    
     //içine bir key(yüz maskes) ve numarası(0....300...) verildiğinde o product ı database den çekiyo
-    private func fetchProduct(key: String,number:String)->Product {
-        var prod:Product = Product(kullanım_sekli: "",ozet_Bilgi: "",urun_bilgi: "",urun_bileseni: [""],urun_boyutu: "",urun_faydalari: "",urun_markasi: "");
+    private func fetchProduct(key: String,number:String){
         let docRef = db.collection("product").document("product_list")
             .collection(key).document(number)
         
         docRef.getDocument { document, error in
-            if let error = error as NSError? {
-                print(error)
-                print("------Noluyo ya--------")
-            }
-            else {
-                let document = document
-                let data = document?.data()
+            if let document = document{
+                let data = document.data()
                 let kullanım_sekli: String = data?["Kullanım Şekli:"] as? String ?? ""
                 let ozet_Bilgi: String = data?["Özet Bilgi:"] as? String ?? ""
                 let urun_bilgi: String = data?["Ürün Adı:"] as? String ?? ""
@@ -65,26 +51,34 @@ struct ProductDataSource {
                 let urun_boyutu:String = data?["Ürün Boyutu:"] as? String ?? ""
                 let urun_faydalari: String = data?["Ürün Faydaları:"] as? String ?? ""
                 let urun_markasi: String = data?["Ürün Markası:"] as? String ?? ""
-                prod = Product(kullanım_sekli: kullanım_sekli, ozet_Bilgi: ozet_Bilgi, urun_bilgi: urun_bilgi, urun_bileseni: urun_bileseni, urun_boyutu: urun_boyutu, urun_faydalari: urun_faydalari, urun_markasi: urun_markasi)
-                print("---fetch olması gereken------")
-                print(prod.urun_markasi)
+                let myProd: Product = Product(kullanım_sekli: kullanım_sekli, ozet_Bilgi: ozet_Bilgi, urun_bilgi: urun_bilgi, urun_bileseni: urun_bileseni, urun_boyutu: urun_boyutu, urun_faydalari: urun_faydalari, urun_markasi: urun_markasi)
             }
+            else{
+                if let error = error{
+                    print(error)
+                }
+            }
+
+//            print("func içi")
+//            print(myProd.urun_markasi)
+//            self.productArray.append(myProd)
+//            print("self.productArray: ")
+//            print(self.productArray[0].urun_markasi)
+//            print("productArray: ")
+//            print(productArray[0].urun_markasi)
+//            print("----------------")
         }
-//        print("AAAAAAA")
-//        print(prod.urun_markasi)
-        return prod
+//        print("Return Kısmı")
+//        print("self.productArray: ")
+//        print(self.productArray[0].urun_markasi)
+//        print("productArray: ")
+//        print(productArray[0].urun_markasi)
+//        print("---------------")
+//        return(productArray)
     }
     
-    
-    
-    
-    
-    
-    
-    
     //fireBase deki akşam rutininde olan bütün productları çekiyor sanırım test edildi datayı alıyor ancak display edemedim bizim viewController da
-    private func getAksamDocument()-> [Product] {
-        var aksamArr:[Product] = []
+    private func getAksamDocument() {
         //Get specific document from current user
         let userID = Auth.auth().currentUser?.uid ?? ""
         let docRef = db.collection("users").document(userID).collection("routines").document("routine").collection("aksam").document("products")
@@ -96,7 +90,7 @@ struct ProductDataSource {
                     let data = document.data()
                     if let docKeys = data?.keys{
                         for key in docKeys{
-                            aksamArr.append(fetchProduct(key: key,number: String(data?[key] as! Int)))
+//                            self.fetchProduct(key: key,number: String(data?[key] as! Int))
                         }
                     }
                     else{
@@ -106,13 +100,11 @@ struct ProductDataSource {
                 }
             }
         }
-        return aksamArr
     }
     
     
     //fireBase deki sabah rutininde olan bütün productları çekiyor ve bir liste olarak döndürüyor en son da appendliyoruz bunları
-    private func AppendSabahDocument()->[Product] {
-        var sabahArr:[Product] = []
+    private func getSabahDocument(){
         //Get specific document from current user
         let userID = Auth.auth().currentUser?.uid ?? ""
         let docRef = db.collection("users").document(userID).collection("routines").document("routine").collection("sabah").document("products")
@@ -124,7 +116,7 @@ struct ProductDataSource {
                     let data = document.data()
                     if let docKeys = data?.keys{
                         for key in docKeys{
-                            sabahArr.append(fetchProduct(key: key, number: String(data?[key] as! Int)).self)
+                            
                         }
                     }
                     else{
@@ -134,6 +126,5 @@ struct ProductDataSource {
                 }
             }
         }
-        return(sabahArr)
     }
 }
