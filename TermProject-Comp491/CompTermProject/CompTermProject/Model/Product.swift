@@ -17,6 +17,7 @@ class Product: Codable{
     var urun_boyutu:String
     var urun_faydalari: String
     var urun_markasi: String
+    
     init(kullanım_sekli:String,ozet_Bilgi:String,urun_bilgi: String,urun_bileseni: [String],urun_boyutu:String
     ,urun_faydalari: String,urun_markasi: String){
         self.kullanım_sekli = kullanım_sekli

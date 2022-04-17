@@ -65,9 +65,8 @@ extension RecomendationsViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductsTableViewCell
             let product = productDataSource.getProductWithIndex(index: getRealIndex(indexPath: indexPath))
             //let event = productDataSource.getProductWithIndex(index: 0)
-            cell.ProductName.text = product.prodName
-            cell.ProductImage.image = UIImage(named: product.imageName)
-            cell.productAttributes.text = product.usage
+            cell.ProductName.text = product.urun_markasi
+            cell.productAttributes.text = product.kullanım_sekli
             cell.productAttributes.textColor = UIColor.cyan
             return cell
         }
