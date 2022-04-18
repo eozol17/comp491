@@ -35,6 +35,7 @@
 		797DDECC27EA06D300B0FFE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797DDECB27EA06D300B0FFE2 /* LoginViewController.swift */; };
 		797DDECE27EA079100B0FFE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 797DDECD27EA079100B0FFE2 /* GoogleService-Info.plist */; };
 		797DDED027EA081F00B0FFE2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797DDECF27EA081F00B0FFE2 /* SignUpViewController.swift */; };
+		79AC5B66280DC4B500996839 /* ProductDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AC5B65280DC4B500996839 /* ProductDataSourceDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		797DDECB27EA06D300B0FFE2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		797DDECD27EA079100B0FFE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		797DDECF27EA081F00B0FFE2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		79AC5B65280DC4B500996839 /* ProductDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataSourceDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				796A05EC27D60029009E0DAB /* Product.swift */,
 				796A05EE27D60092009E0DAB /* User.swift */,
 				790D3A0527DB6016005E5027 /* ProductDataSource.swift */,
+				79AC5B65280DC4B500996839 /* ProductDataSourceDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				791A361227EB12D0001D9C13 /* surveyViewController.swift in Sources */,
+				79AC5B66280DC4B500996839 /* ProductDataSourceDelegate.swift in Sources */,
 				797DDECC27EA06D300B0FFE2 /* LoginViewController.swift in Sources */,
 				790D3A0627DB6016005E5027 /* ProductDataSource.swift in Sources */,
 				796FDBFC27CF68A7007FC5CA /* ViewController.swift in Sources */,

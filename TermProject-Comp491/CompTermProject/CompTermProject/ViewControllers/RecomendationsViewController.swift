@@ -17,6 +17,8 @@ class RecomendationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        productDataSource.delegate = self
+        productDataSource.loadProductList()
     }
     
 
@@ -51,6 +53,15 @@ class RecomendationsViewController: UIViewController {
         }
 }
 
+extension RecomendationsViewController:ProductDataSourceDelegate {
+    func productListLoaded() {
+        productsTableView.reloadData()
+    }
+    
+    func playerDetailLoaded(product: Product) {
+    }
+}
+
 extension RecomendationsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
             return 1
@@ -64,8 +75,8 @@ extension RecomendationsViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductsTableViewCell
             let product = productDataSource.getProductWithIndex(index: getRealIndex(indexPath: indexPath))
             //let event = productDataSource.getProductWithIndex(index: 0)
-            cell.ProductName.text = product.urun_markasi
-            cell.productAttributes.text = product.kullanım_sekli
+            cell.ProductName.text = product.urun_adi
+            cell.productAttributes.text = product.kullanim_sekli
             cell.productAttributes.textColor = UIColor.cyan
             return cell
         }

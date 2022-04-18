@@ -30,8 +30,6 @@ class Survey_2_ViewController: UIViewController {
         let url = URL(string: "https://europe-west3-skinmate-2aab0.cloudfunctions.net/recommendation")!
         var request = URLRequest(url: url)
         let body = ["user_id": userID]
-        //
-        print(JSONSerialization.isValidJSONObject(body))
             
         let bodyData = try? JSONSerialization.data(
             withJSONObject: body
@@ -43,7 +41,6 @@ class Survey_2_ViewController: UIViewController {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         let session = URLSession.shared
         let task = session.dataTask(with: request) { (data, response, error) in
-
             if let error = error {
                 print("------Error------")
                 print(error)
@@ -52,7 +49,15 @@ class Survey_2_ViewController: UIViewController {
                 do{
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]{
                         if let sabah = json["sabah"] as? [String:Any]{
-                            print(sabah)
+                            for(key,_) in sabah{
+                                print("key = " + key)
+                                if let x = sabah[key] as? [String: String]{
+                                    for (key1,value2) in x{
+                                        print("key1 = " + key1)
+                                        print("value2 = " + value2 )
+                                    }
+                                }
+                            }
                         }
                     }
                 }
