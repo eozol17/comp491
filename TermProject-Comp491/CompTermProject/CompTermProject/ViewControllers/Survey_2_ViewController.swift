@@ -14,6 +14,7 @@ class Survey_2_ViewController: UIViewController {
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var post2: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,9 +49,17 @@ class Survey_2_ViewController: UIViewController {
                 print(error)
                 // Handle HTTP request error
             } else if let data = data {
+                do{
+                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]{
+                        if let sabah = json["sabah"] as? [String:Any]{
+                            print(sabah)
+                        }
+                    }
+                }
+                catch{
+                    print("------catch------")
+                }
                 // Handle HTTP request response
-                print("------data------")
-                print(data)
             } else {
                 print("------Unhandled------\n")
                 // Handle unexpected error
