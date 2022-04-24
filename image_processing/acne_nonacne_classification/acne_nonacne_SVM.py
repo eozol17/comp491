@@ -34,24 +34,32 @@ from sklearn.model_selection import train_test_split
 
 # stores the labels in an array
 labels = []
-size_open_comedone = len(os.listdir("/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/open comedone/"))
+size_open_comedone = len(os.listdir("/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/60/open comedone/"))
 for i in range(1, size_open_comedone):
   labels.append("open comedone")
 labels.append("open comedone")
-size_close_comedone = len(os.listdir("/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/closed comedone/"))
+size_close_comedone = len(os.listdir("/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/60/closed comedone/"))
 for i in range(1, size_close_comedone):
   labels.append("closed comedone")
 labels.append("closed comedone")
-size_pustules = len(os.listdir("/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/pustules/"))
+size_pustules = len(os.listdir("/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/60/pustules/"))
 for i in range(1, size_pustules):
   labels.append("pustules")
 labels.append("pustules")
-size_cystic = len(os.listdir("/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/cystic/"))
+size_cystic = len(os.listdir("/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/60/cystic/"))
 for i in range(1, size_cystic):
   labels.append("cystic")
 labels.append("cystic")
+size_nodular = len(os.listdir("/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/60/nodular acne/"))
+for i in range(1, size_nodular):
+  labels.append("nodular acne")
+labels.append("nodular acne")
+size_papules = len(os.listdir("/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/60/papules/"))
+for i in range(1, size_papules):
+  labels.append("papules")
+labels.append("papules")
 
-size_no_acne = len(os.listdir("/content/drive/MyDrive/Comp491 Skincare Project/no acne dataset/patches/"))
+size_no_acne = len(os.listdir("/content/drive/MyDrive/Comp491 Skincare Project/no acne dataset/big patches güncel/"))
 for i in range(1, size_no_acne):
   labels.append("none")
 labels.append("none")
@@ -150,32 +158,44 @@ def calculateCooccurrenceFeatures(accM):
 # gets images
 with tf.device('/device:GPU:0'):
   images_array = []
-  for patch in os.listdir("/content/drive/My Drive/Comp491 Skincare Project/patch dataset/open comedone"):
-    patchImage = "/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/open comedone/" + str(patch)
+  for patch in os.listdir("/content/drive/My Drive/Comp491 Skincare Project/patch dataset/60/open comedone"):
+    patchImage = "/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/60/open comedone/" + str(patch)
     patchImage = cv2.imread(patchImage)
     grayImg = cv2.cvtColor(patchImage, cv2.COLOR_BGR2GRAY)
     images_array.append(grayImg)
 
-  for patch in os.listdir("/content/drive/My Drive/Comp491 Skincare Project/patch dataset/closed comedone"):
-    patchImage = "/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/closed comedone/" + str(patch)
+  for patch in os.listdir("/content/drive/My Drive/Comp491 Skincare Project/patch dataset/60/closed comedone"):
+    patchImage = "/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/60/closed comedone/" + str(patch)
     patchImage = cv2.imread(patchImage)
     grayImg = cv2.cvtColor(patchImage, cv2.COLOR_BGR2GRAY)
     images_array.append(grayImg)
 
-  for patch in os.listdir("/content/drive/My Drive/Comp491 Skincare Project/patch dataset/pustules"):
-    patchImage = "/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/pustules/" + str(patch)
+  for patch in os.listdir("/content/drive/My Drive/Comp491 Skincare Project/patch dataset/60/pustules"):
+    patchImage = "/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/60/pustules/" + str(patch)
     patchImage = cv2.imread(patchImage)
     grayImg = cv2.cvtColor(patchImage, cv2.COLOR_BGR2GRAY)
     images_array.append(grayImg)
 
-  for patch in os.listdir("/content/drive/My Drive/Comp491 Skincare Project/patch dataset/cystic"):
-    patchImage = "/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/cystic/" + str(patch)
+  for patch in os.listdir("/content/drive/My Drive/Comp491 Skincare Project/patch dataset/60/cystic"):
+    patchImage = "/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/60/cystic/" + str(patch)
     patchImage = cv2.imread(patchImage)
     grayImg = cv2.cvtColor(patchImage, cv2.COLOR_BGR2GRAY)
     images_array.append(grayImg)
 
-  for patch in os.listdir("/content/drive/My Drive/Comp491 Skincare Project/no acne dataset/patches/"):
-    patchImage = "/content/drive/MyDrive/Comp491 Skincare Project/no acne dataset/patches/" + str(patch)
+  for patch in os.listdir("/content/drive/My Drive/Comp491 Skincare Project/patch dataset/60/nodular acne/"):
+    patchImage = "/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/60/nodular acne/" + str(patch)
+    patchImage = cv2.imread(patchImage)
+    grayImg = cv2.cvtColor(patchImage, cv2.COLOR_BGR2GRAY)
+    images_array.append(grayImg)
+
+  for patch in os.listdir("/content/drive/My Drive/Comp491 Skincare Project/patch dataset/60/papules/"):
+    patchImage = "/content/drive/MyDrive/Comp491 Skincare Project/patch dataset/60/papules/" + str(patch)
+    patchImage = cv2.imread(patchImage)
+    grayImg = cv2.cvtColor(patchImage, cv2.COLOR_BGR2GRAY)
+    images_array.append(grayImg)
+
+  for patch in os.listdir("/content/drive/My Drive/Comp491 Skincare Project/no acne dataset/big patches güncel/"):
+    patchImage = "/content/drive/MyDrive/Comp491 Skincare Project/no acne dataset/big patches güncel/" + str(patch)
     patchImage = cv2.imread(patchImage)
     grayImg = cv2.cvtColor(patchImage, cv2.COLOR_BGR2GRAY)
     images_array.append(grayImg)
@@ -190,16 +210,25 @@ print("train pustules")
 print(y_train.count("pustules"))
 print("train cystic")
 print(y_train.count("cystic"))
+print("train nodular acne")
+print(y_train.count("nodular acne"))
+print("train papules")
+print(y_train.count("papules"))
 print("train none")
 print(y_train.count("none"))
 print("test open comedone")
 print(y_test.count("open comedone"))
 print("test closed comedone")
 print(y_test.count("closed comedone"))
-print("train pustules")
+print("test pustules")
 print(y_test.count("pustules"))
-print("train cystic")
+print("test cystic")
 print(y_test.count("cystic"))
+print("test nodular acne")
+print(y_test.count("nodular acne"))
+print("test papules")
+print(y_test.count("papules"))
+print("test none")
 print(y_test.count("none"))
 
 for index,y in enumerate(y_train):
@@ -244,12 +273,15 @@ for column in np.transpose(feature_array_training):
 for (i, j), value in np.ndenumerate(feature_array_training):
     feature_array_training[i][j] = (value - means[j]) / stdevs[j]
 
+print(means)
+print(stdevs)
+
 from sklearn import svm
 from sklearn.metrics import accuracy_score, confusion_matrix
 
 
 # SVM with linear kernel
-model_linear = svm.SVC(C=5, kernel='linear')
+model_linear = svm.SVC(C=5, kernel='linear', class_weight = "balanced")
 model_linear.fit(feature_array_training, y_train)
 pred_linear = model_linear.predict(feature_array_training)
 print("overall training accuracy for SVM with linear kernel:")
@@ -260,7 +292,7 @@ print(confusion_matrix_linear.diagonal()/confusion_matrix_linear.sum(axis=1))
 
 from sklearn.metrics import accuracy_score, confusion_matrix
 # SVM with rbf kernel
-model_rbf = svm.SVC(C=1000, gamma=0.3, kernel='rbf')
+model_rbf = svm.SVC(C=1000, gamma=0.3, kernel='rbf', class_weight = "balanced")
 model_rbf.fit(feature_array_training, y_train)
 pred_rbf = model_rbf.predict(feature_array_training)
 print("overall training accuracy for SVM with rbf kernel:")
@@ -269,8 +301,18 @@ confusion_matrix_rbf = confusion_matrix(y_train, pred_rbf)
 print("class training accuracies for SVM with rbf kernel:")
 print(confusion_matrix_rbf.diagonal()/confusion_matrix_rbf.sum(axis=1))
 
+# save model with rbf kernel
+import pickle
+savedModel = 'savedModel.sav'
+pickle.dump(model_rbf, open(savedModel, 'wb'))
+
+loadedModel = pickle.load(open('savedModel.sav', 'rb'))
+
+for (i, j), value in np.ndenumerate(feature_array_test):
+    feature_array_test[i][j] = (value - means[j]) / stdevs[j]
+
 # SVM with sigmoidal kernel
-model_sigmoidal = svm.SVC(C=8, gamma=0.01, coef0=0.001, kernel='sigmoid')
+model_sigmoidal = svm.SVC(C=7, gamma=0.01, coef0=0.001, kernel='sigmoid', class_weight = "balanced")
 model_sigmoidal.fit(feature_array_training, y_train)
 pred_sigmoidal = model_sigmoidal.predict(feature_array_training)
 print("overall training accuracy for SVM with sigmoidal kernel:")
@@ -279,17 +321,13 @@ confusion_matrix_sigmoidal = confusion_matrix(y_train, pred_sigmoidal)
 print("class training accuracies for SVM with sigmoidal kernel:")
 print(confusion_matrix_sigmoidal.diagonal()/confusion_matrix_sigmoidal.sum(axis=1))
 
-
-
-
-
 # feature normalization for test set
-from statistics import stdev, mean
+"""from statistics import stdev, mean
 means = []
 stdevs = []
 for column in np.transpose(feature_array_test):
     means.append(mean(column))
-    stdevs.append(stdev(column))
+    stdevs.append(stdev(column))"""
 for (i, j), value in np.ndenumerate(feature_array_test):
     feature_array_test[i][j] = (value - means[j]) / stdevs[j]
 
@@ -301,13 +339,14 @@ confusion_matrix_linear = confusion_matrix(y_test, pred_linear)
 print("class test accuracies for SVM with linear kernel:")
 print(confusion_matrix_linear.diagonal()/confusion_matrix_linear.sum(axis=1))
 
-# testing the model for SVM rbf kernel
-pred_rbf = model_rbf.predict(feature_array_test)
-print("overall test accuracy for SVM with rbf kernel:")
-print(accuracy_score(y_test, pred_rbf))
-confusion_matrix_rbf = confusion_matrix(y_test, pred_rbf)
-print("class test accuracies for SVM with rbf kernel:")
-print(confusion_matrix_rbf.diagonal()/confusion_matrix_rbf.sum(axis=1))
+with tf.device('/device:CPU:0'):
+  # testing the model for SVM rbf kernel
+  pred_rbf = model_rbf.predict(feature_array_test)
+  print("overall test accuracy for SVM with rbf kernel:")
+  print(accuracy_score(y_test, pred_rbf))
+  confusion_matrix_rbf = confusion_matrix(y_test, pred_rbf)
+  print("class test accuracies for SVM with rbf kernel:")
+  print(confusion_matrix_rbf.diagonal()/confusion_matrix_rbf.sum(axis=1))
 
 # testing the model for SVM sigmoidal kernel
 pred_sigmoidal = model_sigmoidal.predict(feature_array_test)
