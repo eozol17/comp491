@@ -42,11 +42,16 @@ class ProductDataSource {
             let dataTask = urlSession.dataTask(with: urlRequest) { data, response, error in
                 let decoder = JSONDecoder()
                 if let data = data {
-                    let productArrayFromNetwork = try! decoder.decode([Product].self, from: data)
-                    self.productArray = productArrayFromNetwork
-                    DispatchQueue.main.async {
-                        self.delegate?.productListLoaded()
+                    if let productArrayFromNetwork = try? decoder.decode([Product].self, from: data){
+                        self.productArray = productArrayFromNetwork
+                        DispatchQueue.main.async {
+                            self.delegate?.productListLoaded()
+                        }
                     }
+                    else{
+                        print("DataSource not created as it doesnt exist before analysis")
+                    }
+
                     
                 }
             }

@@ -18,15 +18,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DSS-PA-Bav">
-                                <rect key="frame" x="35.333333333333343" y="88" width="319.33333333333326" height="537.33333333333337"/>
+                                <rect key="frame" x="34.666666666666657" y="88" width="320.66666666666674" height="539"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DSS-PA-Bav" secondAttribute="height" multiplier="22:37" id="Q0V-y7-yBP"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXU-TX-cL1">
-                                <rect key="frame" x="175" y="719" width="64" height="43"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXU-TX-cL1">
+                                <rect key="frame" x="64" y="667" width="64" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="AXU-TX-cL1" secondAttribute="height" multiplier="64:43" id="ofM-ZP-mR3"/>
+                                    <constraint firstAttribute="width" constant="64" id="Fhy-w1-2Nk"/>
+                                    <constraint firstAttribute="height" constant="43" id="vf8-VH-yOY"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="camera.fill" catalog="system"/>
@@ -34,26 +35,38 @@
                                     <action selector="TappedCameraBtn:" destination="w49-vl-nhN" eventType="touchUpInside" id="5p6-0v-Nle"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViE-sn-czE">
+                                <rect key="frame" x="260" y="665" width="95" height="48"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Analiz Et"/>
+                                <connections>
+                                    <action selector="AnalizPressed:" destination="w49-vl-nhN" eventType="touchUpInside" id="atJ-ZW-fH7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nlt-JS-0qk"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
+                            <constraint firstItem="nlt-JS-0qk" firstAttribute="trailing" secondItem="ViE-sn-czE" secondAttribute="trailing" constant="35" id="4C1-ge-fEs"/>
+                            <constraint firstItem="ViE-sn-czE" firstAttribute="centerY" secondItem="AXU-TX-cL1" secondAttribute="centerY" id="7fN-YM-x4k"/>
+                            <constraint firstItem="ViE-sn-czE" firstAttribute="leading" secondItem="AXU-TX-cL1" secondAttribute="trailing" constant="132" id="9Ft-mK-ol6"/>
+                            <constraint firstItem="AXU-TX-cL1" firstAttribute="top" secondItem="DSS-PA-Bav" secondAttribute="bottom" constant="40" id="EjW-6U-FeA"/>
+                            <constraint firstItem="nlt-JS-0qk" firstAttribute="bottom" secondItem="AXU-TX-cL1" secondAttribute="bottom" constant="51" id="HqV-LI-IEx"/>
                             <constraint firstItem="DSS-PA-Bav" firstAttribute="centerX" secondItem="nlt-JS-0qk" secondAttribute="centerX" id="Iv1-ke-8S4"/>
+                            <constraint firstItem="AXU-TX-cL1" firstAttribute="leading" secondItem="nlt-JS-0qk" secondAttribute="leading" constant="64" id="XZD-5b-UOb"/>
                             <constraint firstItem="DSS-PA-Bav" firstAttribute="top" secondItem="nlt-JS-0qk" secondAttribute="top" id="dPK-u3-CK5"/>
-                            <constraint firstItem="nlt-JS-0qk" firstAttribute="bottom" secondItem="AXU-TX-cL1" secondAttribute="bottom" constant="51" id="jMv-DX-olG"/>
-                            <constraint firstItem="AXU-TX-cL1" firstAttribute="top" secondItem="DSS-PA-Bav" secondAttribute="bottom" constant="51" id="mB5-EM-VSu"/>
-                            <constraint firstItem="AXU-TX-cL1" firstAttribute="centerX" secondItem="nlt-JS-0qk" secondAttribute="centerX" id="mfN-WA-Iqa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aDQ-2d-NiB"/>
                     <connections>
                         <outlet property="CameraView" destination="DSS-PA-Bav" id="eae-h0-k91"/>
                         <outlet property="TakePhotoButton" destination="AXU-TX-cL1" id="oXi-b0-1WX"/>
+                        <outlet property="analizButton" destination="ViE-sn-czE" id="Gdo-Xi-jJf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zfz-n5-d73" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2152.1739130434785" y="1711.6071428571429"/>
+            <point key="canvasLocation" x="-2152.3076923076924" y="1711.1374407582937"/>
         </scene>
         <!--Settings-->
         <scene sceneID="MHm-Ts-tTG">
@@ -850,25 +863,6 @@
                                     <segue destination="d16-4Q-L9l" kind="show" id="C7N-mP-gCw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLd-1b-9wc">
-                                <rect key="frame" x="16" y="353" width="121" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="PostToRequest"/>
-                                <connections>
-                                    <action selector="PostUsed:" destination="fHo-3d-kmO" eventType="touchUpInside" id="GXd-4f-Fgu"/>
-                                    <action selector="postPressed:" destination="rb9-b7-3Nk" eventType="touchUpInside" id="4XL-wQ-L8m"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgK-jP-gDS">
-                                <rect key="frame" x="18" y="407" width="117" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Post to Funct1"/>
-                                <connections>
-                                    <action selector="post2:" destination="rb9-b7-3Nk" eventType="touchUpInside" id="YtK-Qh-yqE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ew5-Nw-G7C"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -887,13 +881,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2wm-Y9-tq6"/>
-                    <connections>
-                        <outlet property="post2" destination="NgK-jP-gDS" id="dqo-Fz-un4"/>
-                        <outlet property="postButton" destination="CLd-1b-9wc" id="fWu-kA-jR3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKP-6M-6g6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="fHo-3d-kmO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-2845" y="309"/>
         </scene>

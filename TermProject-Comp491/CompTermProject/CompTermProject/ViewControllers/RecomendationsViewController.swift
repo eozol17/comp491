@@ -20,6 +20,11 @@ class RecomendationsViewController: UIViewController {
         productDataSource.delegate = self
         productDataSource.loadProductList()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        productDataSource.delegate = self
+        productDataSource.loadProductList()
+    }
     
 
     /*

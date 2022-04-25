@@ -72,42 +72,7 @@ class Survey_2_ViewController: UIViewController {
             print("---------------")
         }.resume()
     }
-    
-    
-    
-    
-//    Caleed with button
-    @IBAction func postPressed(_ sender: Any) {
-        guard let userID = Auth.auth().currentUser?.uid else{
-            print("UserId Not found")
-            return
-        }
-        print("Fonksiyona girildi." + "UserId:" + userID)
-        let url = URL(string: "https://us-central1-skinmate-2aab0.cloudfunctions.net/function-1")!
-        var request = URLRequest(url: url)
-        let body = ["user_id": userID]
-        let bodyData = try? JSONSerialization.data(
-            withJSONObject: body
-        )
-        request.httpMethod = "POST"
-        request.httpBody = bodyData
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { (data, response, error) in
 
-            if let error = error {
-                print("------Error------")
-                print(error)
-                // Handle HTTP request error
-            } else if let data = data {
-                // Handle HTTP request response
-                print("------data------")
-                print(data)
-            } else {
-                print("------Unhandled------\n")
-                // Handle unexpected error
-            }
-        }.resume()
-    }
     
     
 
