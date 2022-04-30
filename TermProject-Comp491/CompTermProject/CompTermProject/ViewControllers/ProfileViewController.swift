@@ -37,8 +37,12 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
         profileDataSource.delegate = self
         profileDataSource.loadProfile()
-        
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        profileDataSource.delegate = self
+        profileDataSource.loadProfile()
         
     }
     
