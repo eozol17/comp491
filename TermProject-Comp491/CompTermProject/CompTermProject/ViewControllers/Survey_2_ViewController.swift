@@ -11,68 +11,39 @@ import FirebaseFirestore
 import FirebaseStorage
 
 class Survey_2_ViewController: UIViewController {
-    @IBOutlet weak var postButton: UIButton!
-    @IBOutlet weak var post2: UIButton!
     
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func post2(_ sender: Any) {
-        guard let userID = Auth.auth().currentUser?.uid else{
-            print("UserId Not found")
+    @IBAction func confirmPressed(_ sender: Any) {
+        guard let name = nameField.text,let lastName = lastNameField.text else{
             return
         }
-        print("Fonksiyona girildi." + "UserId:" + userID)
-        let url = URL(string: "https://europe-west3-skinmate-2aab0.cloudfunctions.net/recommendation")!
-        var request = URLRequest(url: url)
-        let body = ["user_id": userID]
+        guard let userID = Auth.auth().currentUser?.uid else{
             
-        let bodyData = try? JSONSerialization.data(
-            withJSONObject: body
-        )
+            return
+        }
+        // Add a new document with a generated ID
         
-        request.httpMethod = "POST"
-        request.httpBody = bodyData
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type") // the request is JSON
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print("------Error------")
-                print(error)
-                // Handle HTTP request error
-            } else if let data = data {
-                do{
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]{
-                        if let sabah = json["sabah"] as? [String:Any]{
-                            for(key,_) in sabah{
-                                print("key = " + key)
-                                if let x = sabah[key] as? [String: String]{
-                                    for (key1,value2) in x{
-                                        print("key1 = " + key1)
-                                        print("value2 = " + value2 )
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                catch{
-                    print("------catch------")
-                }
-                // Handle HTTP request response
+        db.collection("users").document(userID).setData([
+            "first": name,
+            "surname": lastName,
+            "birthday": ""
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
             } else {
-                print("------Unhandled------\n")
-                // Handle unexpected error
+                print("Document added with ID: Added User Data")
             }
-            print("---------------")
-        }.resume()
+        }
+        print(userID)
+        
     }
-
+    
     
     
 

@@ -12,11 +12,14 @@ class Product: Codable{
     var urun_turu:String
     var kullanim_sekli: String
     var urun_adi:String
+    var zaman: String
     
-    init(urun_turu:String,urun_adı:String,kullanim_sekli:String){
+    
+    init(urun_turu:String,urun_adı:String,kullanim_sekli:String,zaman:String){
         self.urun_turu = urun_turu
         self.urun_adi = urun_adı
         self.kullanim_sekli = kullanim_sekli
+        self.zaman = zaman
     }
     
     func set_Urun_turu(tür:String){

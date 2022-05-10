@@ -16,6 +16,7 @@ class RecomendationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Recommended Products"
         // Do any additional setup after loading the view.
         productDataSource.delegate = self
         productDataSource.loadProductList()
@@ -40,15 +41,11 @@ class RecomendationsViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
-        
-//        let cell = sender as! ProductsTableViewCell
-//                if let indexPath = self.productsTableView.indexPath(for: cell) {
-//                    let product = productDataSource.getProductWithIndex(index: 0)
-//                }
-        
         let cell = sender as! ProductsTableViewCell
         if let indexPath = self.productsTableView.indexPath(for: cell) {
             let product = productDataSource.getProductWithIndex(index: getRealIndex(indexPath: indexPath))
+            let productDetailViewController = segue.destination as! ProductDetailViewController
+            productDetailViewController.selectedProdcutUsage = product.kullanim_sekli
         }
     }
     
@@ -59,11 +56,12 @@ class RecomendationsViewController: UIViewController {
 }
 
 extension RecomendationsViewController:ProductDataSourceDelegate {
+    
     func productListLoaded() {
         productsTableView.reloadData()
     }
     
-    func playerDetailLoaded(product: Product) {
+    func productDetailLoaded(product: Product) {
     }
 }
 
@@ -81,7 +79,8 @@ extension RecomendationsViewController: UITableViewDataSource {
             let product = productDataSource.getProductWithIndex(index: getRealIndex(indexPath: indexPath))
             //let event = productDataSource.getProductWithIndex(index: 0)
             cell.ProductName.text = product.urun_adi
-            cell.productAttributes.text = product.kullanim_sekli
+            cell.productAttributes.text = product.urun_turu
+            cell.productTime.text = product.zaman
             cell.productAttributes.textColor = UIColor.cyan
             return cell
         }

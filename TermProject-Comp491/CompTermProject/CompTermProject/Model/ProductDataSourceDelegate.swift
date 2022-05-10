@@ -9,5 +9,5 @@ import Foundation
 
 protocol ProductDataSourceDelegate {
     func productListLoaded()
-    func playerDetailLoaded(product: Product)
+    func productDetailLoaded(product: Product)
 }

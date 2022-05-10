@@ -62,6 +62,7 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: ProfileDataSourceDelegate {
+    
     func profileLoaded() {
         //nameLabel.text = profileDataSource.profileArray[0].name
         
