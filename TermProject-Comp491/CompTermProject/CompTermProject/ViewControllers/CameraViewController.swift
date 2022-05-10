@@ -77,62 +77,29 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
             print("---------------")
         }.resume()
     
-        
-        
-        let myImage = UIImage(named: "sebamed.png")!
-        
-        let imageData:Data = myImage.pngData()!
-        
-        let imageStr = imageData.base64EncodedString()
-    
-        ///
-        ///
-        ///
-        guard let userID = Auth.auth().currentUser?.uid else{
-            print("UserId Not found")
-            return
-        }
-        let body2 = [
-            "user_id": userID
-            //"image": imageStr
-        ]
-            
-        let bodyData2 = try? JSONSerialization.data(
-            withJSONObject: body2
+        imageAnalysis()
 
-        )
-        let urlSession2 = URLSession.shared
-        let baseURL = URL(string: "https://europe-west3-skinmate-2aab0.cloudfunctions.net/image_analysis")!
+    
+    }
+    
+    func imageAnalysis() {
+        let myImage = UIImage(named: "acne2.jpg")!
         
-        var urlRequest2 = URLRequest(url: baseURL)
-            urlRequest2.httpMethod = "POST"
-            urlRequest2.httpBody = bodyData2
-            urlRequest2.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            let dataTask2 = urlSession2.dataTask(with: urlRequest2) { data, response, error in
-                //let decoder = JSONDecoder()
-                //if let data = data {
-                guard let data = data, error == nil else {
-                    return
-                }
-                
-                do {
-                    let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                    print("success")
-                    print(response)
-                } catch  {
-                    print(error)
-                }
+        let storage = Storage.storage().reference()
+        
+        let imageData = myImage.jpegData(compressionQuality: 0.8)!
+        
+        let userID = Auth.auth().currentUser?.uid
+        
+        let fileName = Date()
+        
+        let file = storage.child("\(String(describing: userID!))/\(fileName).jpg")
+        
+        let uploadTask = file.putData(imageData, metadata: nil) { metadata, error in
+            if error == nil && metadata != nil {
+               print("success")
             }
-            dataTask2.resume()
-        
-      
-        
-        
-        
-        //request2.httpBody = try? JSONSerialization.data(withJSONObject: body2, options: .fragmentsAllowed)
-        
-
-    
+        }
     }
     
     
