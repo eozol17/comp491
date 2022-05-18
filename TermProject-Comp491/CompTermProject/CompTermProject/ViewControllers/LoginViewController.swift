@@ -18,9 +18,18 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tap) // Add gesture recognizer to background view
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    @objc func handleTap() {
+        emailField.resignFirstResponder() // dismiss keyoard
+        passwordField.resignFirstResponder()
+    }
+    
     @IBAction func loginTapped(_ sender: Any) {
         guard let email = emailField.text, let password = passwordField.text else {
             return

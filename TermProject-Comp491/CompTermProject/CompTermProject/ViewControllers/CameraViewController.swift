@@ -6,17 +6,31 @@
 //
 
 import UIKit
+import Foundation
 import Firebase
 import FirebaseFirestore
 import FirebaseStorage
 
 class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var CameraView: UIImageView!
     @IBOutlet weak var TakePhotoButton: UIButton!
     @IBOutlet weak var analizButton: UIButton!
+    var fileName:String = ""
+
+    
+    var q:String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YY_MM_dd"
+        fileName = dateFormatter.string(from: date)
+        fileName = fileName+".jpg"
+        print(fileName)
+        
 //        let picker = UIImagePickerController()
 //        picker.sourceType = .camera
 //        picker.allowsEditing = true
@@ -26,16 +40,23 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func sendPhotoButtonPressed(_ sender: Any) {
+        if let myImage = imageView.image{
+            imageAnalysis(myImage: myImage,name:fileName)
+        }
+    }
+    
     @IBAction func AnalizPressed(_ sender: Any) {
         guard let userID = Auth.auth().currentUser?.uid else{
             print("UserId Not found")
             return
         }
-        print("Fonksiyona girildi." + "UserId:" + userID)
-        let url = URL(string: "https://europe-west3-skinmate-2aab0.cloudfunctions.net/analysis")!
+        print("UserId:" + userID)
+        let url = URL(string: "https://europe-west3-skinmate-2aab0.cloudfunctions.net/image_analysis_by_storage")!
         var request = URLRequest(url: url)
-        let body = ["user_id": userID]
-            
+        
+        let body = ["user_id": userID,"file_name":fileName]
+    
         let bodyData = try? JSONSerialization.data(
             withJSONObject: body
         )
@@ -52,19 +73,7 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
                 // Handle HTTP request error
             } else if let data = data {
                 do{
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]{
-                        if let sabah = json["sabah"] as? [String:Any]{
-                            for(key,_) in sabah{
-                                print("key = " + key)
-                                if let x = sabah[key] as? [String: String]{
-                                    for (key1,value2) in x{
-                                        print("key1 = " + key1)
-                                        print("value2 = " + value2 )
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    print("Got Data")
                 }
                 catch{
                     print("------catch------")
@@ -76,14 +85,10 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
             }
             print("---------------")
         }.resume()
-    
-        imageAnalysis()
-
-    
     }
     
-    func imageAnalysis() {
-        let myImage = UIImage(named: "acne2.jpg")!
+    
+    func imageAnalysis(myImage:UIImage,name:String) {
         
         let storage = Storage.storage().reference()
         
@@ -91,9 +96,10 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         
         let userID = Auth.auth().currentUser?.uid
         
-        let fileName = Date()
+
         
-        let file = storage.child("\(String(describing: userID!))/\(fileName).jpg")
+        
+        let file = storage.child("\(String(describing: userID!))/\(name)")
         
         let uploadTask = file.putData(imageData, metadata: nil) { metadata, error in
             if error == nil && metadata != nil {

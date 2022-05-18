@@ -25,6 +25,7 @@ class RecomendationsViewController: UIViewController {
         super.viewDidAppear(animated)
         productDataSource.delegate = self
         productDataSource.loadProductList()
+        
     }
     
 
@@ -78,10 +79,16 @@ extension RecomendationsViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductsTableViewCell
             let product = productDataSource.getProductWithIndex(index: getRealIndex(indexPath: indexPath))
             //let event = productDataSource.getProductWithIndex(index: 0)
-            cell.ProductName.text = product.urun_adi
-            cell.productAttributes.text = product.urun_turu
-            cell.productTime.text = product.zaman
-            cell.productAttributes.textColor = UIColor.cyan
+            if (productDataSource.productArray[0].urun_turu == "Uyarı"){
+                cell.ProductName.text = product.urun_adi
+                cell.productAttributes.text = ""
+                cell.productTime.text = ""
+            }
+            else{
+                cell.ProductName.text = product.urun_adi
+                cell.productAttributes.text = product.urun_turu
+                cell.productTime.text = product.zaman
+            }
             return cell
         }
 }

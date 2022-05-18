@@ -26,12 +26,21 @@ class surveyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        var ref: DatabaseReference!
-//
-//        ref = Database.database().reference()
-
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tap) // Add gesture recognizer to background view
         // Do any additional setup after loading the view.
     }
+    @objc func handleTap() {
+        nameField.resignFirstResponder() // dismiss keyoard
+        lastNameField.resignFirstResponder()
+        lastName.resignFirstResponder()
+        genderOption.resignFirstResponder()
+        ageOption.resignFirstResponder()
+        DrySkin.resignFirstResponder()
+        SkinRash.resignFirstResponder()
+        Hormonal_Therapy.resignFirstResponder()
+    }
+    
     @IBAction func confirmPressed(_ sender: Any) {
         guard let name = nameField.text,let lastName = lastNameField.text,let gender = genderOption.text,let age = ageOption.text,let DrySkin = DrySkin.text,let SkinRash = SkinRash.text,let hormon = Hormonal_Therapy.text else{
             return

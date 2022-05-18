@@ -16,6 +16,21 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var warningLabel: UILabel!
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tap) // Add gesture recognizer to background view
+    }
+
+    @objc func handleTap() {
+        emailField.resignFirstResponder() // dismiss keyoard
+        passwordField.resignFirstResponder()
+        passwordAgainField.resignFirstResponder()
+    }
+    
+    
+    
+    
     @IBAction func SignUpButtonPressed(_ sender: Any) {
         guard let email = emailField.text,let password = passwordField.text,let passwordAgain = passwordAgainField.text else{
             self.warningLabel.text = "Empty Fields"
@@ -46,12 +61,6 @@ class SignUpViewController: UIViewController {
 //            self.present(survey1, animated: true, completion: nil)
             
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {

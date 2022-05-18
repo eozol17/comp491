@@ -44,6 +44,16 @@ class ProfileViewController: UIViewController {
         profileDataSource.delegate = self
         profileDataSource.loadProfile()
         
+        if(nodulLabel.text == "Label"){
+            kistikLabel.text = ("Henüz bir analiz bulunamamıştır.")
+            pustulLabel.text = ("")
+            papulLabel.text = ("")
+            nodulLabel.text = ("")
+            siyahNoktaLabel.text = ("")
+            beyazNoktaLabel.text = ("")
+            ciltTipiLabel.text = ("")
+        }
+        
     }
     
    
@@ -67,15 +77,24 @@ extension ProfileViewController: ProfileDataSourceDelegate {
         //nameLabel.text = profileDataSource.profileArray[0].name
         
         if(profileDataSource.profileArray[0].cilt_tipi! == "error") {
-            kistikLabel.text = ("Yuz algilanamamistir. Tekrar fotograf cekiniz.")
+            kistikLabel.text = ("Yüz algılanamamıştır. Tekrar fotoğraf çekiniz.")
             pustulLabel.text = ("")
             papulLabel.text = ("")
             nodulLabel.text = ("")
             siyahNoktaLabel.text = ("")
             beyazNoktaLabel.text = ("")
             ciltTipiLabel.text = ("")
-        } else {
+//        } else if(pustulLabel.text == "Label" || kistikLabel.text == "Label" || papulLabel.text == "Label" || nodulLabel.text == "Label") {
+//            kistikLabel.text = ("Henüz bir analiz bulunamamıştır.")
+//            pustulLabel.text = ("")
+//            papulLabel.text = ("")
+//            nodulLabel.text = ("")
+//            siyahNoktaLabel.text = ("")
+//            beyazNoktaLabel.text = ("")
+//            ciltTipiLabel.text = ("")
         
+        }
+            else {
             let kistik = String(profileDataSource.profileArray[0].kistik!)
             if(kistik == "false") {
                 kistikLabel.text = ("Kistik: Yok")
