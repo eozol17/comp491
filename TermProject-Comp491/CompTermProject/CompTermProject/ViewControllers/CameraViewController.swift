@@ -26,18 +26,10 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         super.viewDidLoad()
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YY_MM_dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         fileName = dateFormatter.string(from: date)
         fileName = fileName+".jpg"
         print(fileName)
-        
-//        let picker = UIImagePickerController()
-//        picker.sourceType = .camera
-//        picker.allowsEditing = true
-//        picker.delegate = self
-//        present(picker, animated: true)
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func sendPhotoButtonPressed(_ sender: Any) {
