@@ -11,6 +11,7 @@
 		0F0777512817275B00EC42BE /* ProfileDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0777502817275B00EC42BE /* ProfileDataSource.swift */; };
 		0F0777532817277000EC42BE /* ProfileDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0777522817277000EC42BE /* ProfileDataSourceDelegate.swift */; };
 		0F0777552817284400EC42BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0777542817284400EC42BE /* ProfileViewController.swift */; };
+		0F23D702283D7476002CBF81 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F23D701283D7476002CBF81 /* SettingsViewController.swift */; };
 		0FDCD2CC27DF404600BF38C0 /* OurUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDCD2CB27DF404600BF38C0 /* OurUITextField.swift */; };
 		79074E8627D7672B000AB284 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79074E8527D7672B000AB284 /* CameraViewController.swift */; };
 		790D3A0627DB6016005E5027 /* ProductDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D3A0527DB6016005E5027 /* ProductDataSource.swift */; };
@@ -47,6 +48,7 @@
 		0F0777502817275B00EC42BE /* ProfileDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataSource.swift; sourceTree = "<group>"; };
 		0F0777522817277000EC42BE /* ProfileDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataSourceDelegate.swift; sourceTree = "<group>"; };
 		0F0777542817284400EC42BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0F23D701283D7476002CBF81 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0FDCD2CB27DF404600BF38C0 /* OurUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurUITextField.swift; sourceTree = "<group>"; };
 		79074E8527D7672B000AB284 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		790D3A0527DB6016005E5027 /* ProductDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataSource.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				791A361127EB12D0001D9C13 /* surveyViewController.swift */,
 				0F0777542817284400EC42BE /* ProfileViewController.swift */,
 				79F82AF928293D0600F2F2F1 /* ProductDetailViewController.swift */,
+				0F23D701283D7476002CBF81 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			files = (
 				0F07774F2817274600EC42BE /* Profile.swift in Sources */,
 				791A361227EB12D0001D9C13 /* surveyViewController.swift in Sources */,
+				0F23D702283D7476002CBF81 /* SettingsViewController.swift in Sources */,
 				79F82AFA28293D0600F2F2F1 /* ProductDetailViewController.swift in Sources */,
 				0F0777552817284400EC42BE /* ProfileViewController.swift in Sources */,
 				79AC5B66280DC4B500996839 /* ProductDataSourceDelegate.swift in Sources */,
