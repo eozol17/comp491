@@ -85,6 +85,13 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
                 // Handle unexpected error
             }
             print("---------------")
+            self.activityIndicator.stopAnimating()
+             let alert = UIAlertController(title: "Analiz başarısız oldu", message: "\"Profil\" ekranından analiz sonuçlarına, \"Ürün Önerileri\" ekranından ürün ve ürün kullanım önerilerine bakabilir, \"İlerleme\" ekranından ilerlemenizi takip edebilirsiniz.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: { action in })
+            alert.addAction(action)
+            DispatchQueue.main.async (
+                execute: { self.present(alert, animated: true)
+            })
         }.resume()
     }
     

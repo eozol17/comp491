@@ -12,7 +12,8 @@ import FirebaseFirestore
 import FirebaseStorage
 
 class SettingsViewController: UIViewController {
-
+    @IBOutlet weak var DisplayImg: UIImageView!
+    
     @IBOutlet weak var retrievedImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class SettingsViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.retrievedImage.image = image
+                    self.DisplayImg.image = image
                 }
             }
         }
