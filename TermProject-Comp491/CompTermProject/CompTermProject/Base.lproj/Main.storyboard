@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vgf-WK-4TT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vgf-WK-4TT">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -331,7 +331,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7NI-QK-0M7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <color key="backgroundColor" name="login signup button"/>
+                        <color key="tintColor" name="login signup button"/>
+                        <color key="barTintColor" name="login signup button"/>
                         <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
@@ -676,16 +678,132 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioq-XV-I09">
-                                <rect key="frame" x="16" y="134" width="125" height="29"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2j2-0m-GdK" customClass="OurUITextField" customModule="CompTermProject" customModuleProvider="target">
+                                <rect key="frame" x="20" y="134" width="350" height="34"/>
+                                <color key="backgroundColor" name="login signup textbox"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GQ7-CL-mfC" customClass="OurUITextField" customModule="CompTermProject" customModuleProvider="target">
+                                <rect key="frame" x="20" y="188" width="350" height="34"/>
+                                <color key="backgroundColor" name="login signup textbox"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxx-pm-tYw">
+                                <rect key="frame" x="16" y="249" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUJ-JQ-ine">
-                                <rect key="frame" x="273" y="552" width="101" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZKg-AQ-xSb" customClass="OurUITextField" customModule="CompTermProject" customModuleProvider="target">
+                                <rect key="frame" x="20" y="296" width="350" height="34"/>
+                                <color key="backgroundColor" name="login signup textbox"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dry Skin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSG-uE-KFu">
+                                <rect key="frame" x="26" y="350" width="144" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skin Rash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUu-vP-tmM">
+                                <rect key="frame" x="26" y="404.66666666666669" width="144" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="S5I-fS-d6r"/>
+                                    <constraint firstAttribute="height" constant="18" id="wlO-JT-cgd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hormonal Therapy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxI-Ql-ls6">
+                                <rect key="frame" x="25.999999999999993" y="455.33333333333331" width="107.33333333333331" height="18.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xPS-R3-w1R" customClass="OurUITextField" customModule="CompTermProject" customModuleProvider="target">
+                                <rect key="frame" x="20" y="242" width="350" height="34"/>
+                                <color key="backgroundColor" name="login signup textbox"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXw-2e-ahX">
+                                <rect key="frame" x="175" y="343" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="lZb-VX-Opg"/>
+                                    <constraint firstAttribute="width" constant="33" id="r1N-RB-JcG"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="unchecked"/>
+                                <connections>
+                                    <action selector="buttonClickedWithSender:" destination="twQ-RD-k2F" eventType="touchUpInside" id="UBr-29-kIS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uk7-pS-non">
+                                <rect key="frame" x="175" y="397" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="eqm-cu-aGj"/>
+                                    <constraint firstAttribute="height" constant="33" id="oBB-Bc-CVq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="unchecked"/>
+                                <connections>
+                                    <action selector="skinRashButtonClickedWithSender:" destination="twQ-RD-k2F" eventType="touchUpInside" id="JJN-c3-eBx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6l-QR-HzS">
+                                <rect key="frame" x="175" y="448" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="M7U-EG-7AT"/>
+                                    <constraint firstAttribute="height" constant="33" id="P4q-9v-aiz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="unchecked"/>
+                                <connections>
+                                    <action selector="hormonalTherapyButtonClickedWithSender:" destination="twQ-RD-k2F" eventType="touchUpInside" id="sDG-Ov-OLd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUJ-JQ-ine">
+                                <rect key="frame" x="269" y="510" width="101" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="YU8-iu-SK7"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="CONFIRM" cornerStyle="capsule" titleAlignment="center">
                                     <backgroundConfiguration key="background">
@@ -700,112 +818,54 @@
                                     <segue destination="d16-4Q-L9l" kind="show" id="Pd2-c6-3t8"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2j2-0m-GdK">
-                                <rect key="frame" x="152" y="134" width="222" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENz-xm-nO7">
-                                <rect key="frame" x="16" y="192" width="125" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GQ7-CL-mfC">
-                                <rect key="frame" x="152" y="192" width="222" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxx-pm-tYw">
-                                <rect key="frame" x="16" y="249" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrN-a0-Uzv">
-                                <rect key="frame" x="39" y="248" width="79" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUp-9d-Sze">
-                                <rect key="frame" x="57" y="307" width="43" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZKg-AQ-xSb">
-                                <rect key="frame" x="152" y="304" width="222" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dry Skin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSG-uE-KFu">
-                                <rect key="frame" x="34" y="359" width="90" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fpX-du-BTa">
-                                <rect key="frame" x="152" y="405" width="222" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skin Rash" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUu-vP-tmM">
-                                <rect key="frame" x="27" y="408" width="105" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QtI-Ye-7Qi">
-                                <rect key="frame" x="152" y="356" width="222" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pJ2-d5-GUe">
-                                <rect key="frame" x="152" y="461" width="222" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hormonal Therapy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxI-Ql-ls6">
-                                <rect key="frame" x="16" y="470" width="123" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xPS-R3-w1R">
-                                <rect key="frame" x="152" y="245" width="222" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hh7-44-ZnU"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="SUu-vP-tmM" firstAttribute="trailing" secondItem="qSG-uE-KFu" secondAttribute="trailing" id="3dO-oI-By9"/>
+                            <constraint firstItem="qSG-uE-KFu" firstAttribute="leading" secondItem="Hh7-44-ZnU" secondAttribute="leading" constant="26" id="7XE-4j-epV"/>
+                            <constraint firstItem="SUu-vP-tmM" firstAttribute="leading" secondItem="Hh7-44-ZnU" secondAttribute="leading" constant="26" id="7sn-8S-odJ"/>
+                            <constraint firstItem="ZKg-AQ-xSb" firstAttribute="leading" secondItem="GQ7-CL-mfC" secondAttribute="leading" id="93A-md-CoZ"/>
+                            <constraint firstItem="SUu-vP-tmM" firstAttribute="centerY" secondItem="Uk7-pS-non" secondAttribute="centerY" id="D0N-C0-NSJ"/>
+                            <constraint firstItem="UXw-2e-ahX" firstAttribute="top" secondItem="ZKg-AQ-xSb" secondAttribute="bottom" constant="13" id="FTV-Gb-NRQ"/>
+                            <constraint firstItem="ZKg-AQ-xSb" firstAttribute="centerX" secondItem="YfS-FJ-n6c" secondAttribute="centerX" id="GCE-Vw-Kua"/>
+                            <constraint firstItem="ZKg-AQ-xSb" firstAttribute="leading" secondItem="Hh7-44-ZnU" secondAttribute="leading" constant="20" id="I3b-Wg-0tk"/>
+                            <constraint firstItem="ZKg-AQ-xSb" firstAttribute="trailing" secondItem="2j2-0m-GdK" secondAttribute="trailing" id="IYf-O0-7eH"/>
+                            <constraint firstItem="F6l-QR-HzS" firstAttribute="centerY" secondItem="UxI-Ql-ls6" secondAttribute="centerY" id="JbT-dk-Oii"/>
+                            <constraint firstItem="F6l-QR-HzS" firstAttribute="top" secondItem="Uk7-pS-non" secondAttribute="bottom" constant="18" id="MSp-NA-bMf"/>
+                            <constraint firstItem="UXw-2e-ahX" firstAttribute="centerY" secondItem="qSG-uE-KFu" secondAttribute="centerY" id="Mhr-U6-KlS"/>
+                            <constraint firstItem="GQ7-CL-mfC" firstAttribute="top" secondItem="2j2-0m-GdK" secondAttribute="bottom" constant="20" id="OD9-Ng-Z0R"/>
+                            <constraint firstItem="ZKg-AQ-xSb" firstAttribute="leading" secondItem="2j2-0m-GdK" secondAttribute="leading" id="OSO-6Q-tiD"/>
+                            <constraint firstItem="UxI-Ql-ls6" firstAttribute="top" secondItem="SUu-vP-tmM" secondAttribute="bottom" constant="32.666666666666686" id="OdH-8y-6cg"/>
+                            <constraint firstItem="SUu-vP-tmM" firstAttribute="leading" secondItem="UxI-Ql-ls6" secondAttribute="leading" id="Or7-ry-oQa"/>
+                            <constraint firstItem="Hh7-44-ZnU" firstAttribute="bottom" secondItem="YUJ-JQ-ine" secondAttribute="bottom" constant="246" id="TDM-sd-DAh"/>
+                            <constraint firstItem="SUu-vP-tmM" firstAttribute="leading" secondItem="qSG-uE-KFu" secondAttribute="leading" id="Utn-7y-CYG"/>
+                            <constraint firstItem="ZKg-AQ-xSb" firstAttribute="leading" secondItem="xPS-R3-w1R" secondAttribute="leading" id="XHk-lA-LbF"/>
+                            <constraint firstItem="UxI-Ql-ls6" firstAttribute="leading" secondItem="Hh7-44-ZnU" secondAttribute="leading" constant="25.999999999999993" id="av3-8f-ten"/>
+                            <constraint firstItem="F6l-QR-HzS" firstAttribute="leading" secondItem="Uk7-pS-non" secondAttribute="leading" id="cSC-9E-JVH"/>
+                            <constraint firstItem="ZKg-AQ-xSb" firstAttribute="trailing" secondItem="GQ7-CL-mfC" secondAttribute="trailing" id="ddq-8p-Cp9"/>
+                            <constraint firstItem="F6l-QR-HzS" firstAttribute="leading" secondItem="UxI-Ql-ls6" secondAttribute="trailing" constant="41.666666666666686" id="dov-RW-ssG"/>
+                            <constraint firstItem="ZKg-AQ-xSb" firstAttribute="top" secondItem="xPS-R3-w1R" secondAttribute="bottom" constant="20" id="gQg-ET-RMR"/>
+                            <constraint firstItem="YUJ-JQ-ine" firstAttribute="trailing" secondItem="ZKg-AQ-xSb" secondAttribute="trailing" id="gUH-1z-6sf"/>
+                            <constraint firstItem="SUu-vP-tmM" firstAttribute="top" secondItem="qSG-uE-KFu" secondAttribute="bottom" constant="36.333333333333314" id="jJT-82-DO0"/>
+                            <constraint firstItem="Uk7-pS-non" firstAttribute="top" secondItem="UXw-2e-ahX" secondAttribute="bottom" constant="21" id="kRm-Y2-eQ6"/>
+                            <constraint firstItem="Hh7-44-ZnU" firstAttribute="bottom" secondItem="F6l-QR-HzS" secondAttribute="bottom" constant="329" id="nMA-y9-rFL"/>
+                            <constraint firstItem="F6l-QR-HzS" firstAttribute="leading" secondItem="UXw-2e-ahX" secondAttribute="leading" id="ooa-Og-0xM"/>
+                            <constraint firstItem="Hh7-44-ZnU" firstAttribute="trailing" secondItem="F6l-QR-HzS" secondAttribute="trailing" constant="182" id="pTW-qw-WrL"/>
+                            <constraint firstItem="ZKg-AQ-xSb" firstAttribute="trailing" secondItem="xPS-R3-w1R" secondAttribute="trailing" id="sAs-Ov-5VX"/>
+                            <constraint firstItem="xPS-R3-w1R" firstAttribute="top" secondItem="GQ7-CL-mfC" secondAttribute="bottom" constant="20" id="zod-2J-Jco"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="giv-Od-SwB"/>
                     <connections>
-                        <outlet property="DrySkin" destination="QtI-Ye-7Qi" id="Tia-fb-aq4"/>
-                        <outlet property="Hormonal_Therapy" destination="pJ2-d5-GUe" id="abr-nd-sYn"/>
-                        <outlet property="SkinRash" destination="fpX-du-BTa" id="IJ6-Bn-iKX"/>
                         <outlet property="ageOption" destination="ZKg-AQ-xSb" id="P0B-IB-R7s"/>
                         <outlet property="confirmButton" destination="YUJ-JQ-ine" id="Pwh-z1-Pcf"/>
+                        <outlet property="drySkinCheckBox" destination="UXw-2e-ahX" id="tgD-Gg-phq"/>
                         <outlet property="genderOption" destination="xPS-R3-w1R" id="cDj-do-3AF"/>
-                        <outlet property="lastName" destination="ENz-xm-nO7" id="o9O-Zo-Rau"/>
+                        <outlet property="hormonalTherapyCheckBox" destination="F6l-QR-HzS" id="siM-2O-bcd"/>
                         <outlet property="lastNameField" destination="GQ7-CL-mfC" id="XFp-KB-x0m"/>
                         <outlet property="nameField" destination="2j2-0m-GdK" id="PVd-bw-n20"/>
+                        <outlet property="skinRashCheckBox" destination="Uk7-pS-non" id="PZb-3v-DWT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JH5-sZ-UXH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -956,6 +1016,7 @@
         <image name="mail" catalog="system" width="128" height="93"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="skinmate logo-1" width="4500" height="2827"/>
+        <image name="unchecked" width="106" height="106"/>
         <namedColor name="login signup button">
             <color red="0.56499999761581421" green="0.23100000619888306" blue="0.93800002336502075" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -970,9 +1031,6 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
