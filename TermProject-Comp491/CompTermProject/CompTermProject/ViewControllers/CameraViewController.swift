@@ -18,6 +18,7 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     @IBOutlet weak var analizButton: UIButton!
     var fileName:String = ""
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var q:String = ""
     
@@ -43,6 +44,7 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
             print("UserId Not found")
             return
         }
+        activityIndicator.startAnimating()
         print("UserId:" + userID)
         let url = URL(string: "https://europe-west3-skinmate-2aab0.cloudfunctions.net/image_analysis_by_storage")!
         var request = URLRequest(url: url)
@@ -66,6 +68,13 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
             } else if let data = data {
                 do{
                     print("Got Data")
+                    self.activityIndicator.stopAnimating()
+                     let alert = UIAlertController(title: "Analiz Tamamlandı", message: "\"Profil\" ekranından analiz sonuçlarına, \"Ürün Önerileri\" ekranından ürün ve ürün kullanım önerilerine bakabilir, \"İlerleme\" ekranından ilerlemenizi takip edebilirsiniz.", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default, handler: { action in })
+                    alert.addAction(action)
+                    DispatchQueue.main.async (
+                        execute: { self.present(alert, animated: true)
+                    })
                 }
                 catch{
                     print("------catch------")

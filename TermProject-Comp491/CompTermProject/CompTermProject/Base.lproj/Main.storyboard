@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vgf-WK-4TT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vgf-WK-4TT">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -36,10 +36,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yV-vD-7uz">
-                                <rect key="frame" x="151" y="682" width="90" height="31"/>
+                                <rect key="frame" x="136" y="682" width="121" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Send Foto"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Fotoğrafı Yükle"/>
                                 <connections>
                                     <action selector="sendPhotoButtonPressed:" destination="w49-vl-nhN" eventType="touchUpInside" id="ZOx-ET-41h"/>
                                 </connections>
@@ -52,6 +52,10 @@
                                     <action selector="AnalizPressed:" destination="w49-vl-nhN" eventType="touchUpInside" id="atJ-ZW-fH7"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="clA-Vm-sSQ">
+                                <rect key="frame" x="179" y="340" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nlt-JS-0qk"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -70,6 +74,7 @@
                     <connections>
                         <outlet property="CameraView" destination="DSS-PA-Bav" id="eae-h0-k91"/>
                         <outlet property="TakePhotoButton" destination="AXU-TX-cL1" id="oXi-b0-1WX"/>
+                        <outlet property="activityIndicator" destination="clA-Vm-sSQ" id="tuv-Ue-7pV"/>
                         <outlet property="analizButton" destination="ViE-sn-czE" id="Gdo-Xi-jJf"/>
                         <outlet property="imageView" destination="DSS-PA-Bav" id="dyx-Xd-ENb"/>
                     </connections>
@@ -87,26 +92,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="taZ-tH-Jzj">
-                                <rect key="frame" x="75" y="144" width="240" height="128"/>
+                                <rect key="frame" x="12" y="146" width="367" height="478"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bir önceki analize göre kırmızı işaretli akneler iyileşmiş, yeşil işaretli akneler ise hala mevcut.  " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTO-HS-rPh">
+                                <rect key="frame" x="21" y="632" width="358" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vm6-3S-X5K"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uKF-EU-0Ci"/>
+                    <navigationItem key="navigationItem" title="Önceki Analizle Karşılaştırma" id="uKF-EU-0Ci"/>
                     <connections>
                         <outlet property="retrievedImage" destination="taZ-tH-Jzj" id="21X-6m-vdF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="03J-OS-iEn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6" y="1712"/>
+            <point key="canvasLocation" x="4.615384615384615" y="1711.8483412322273"/>
         </scene>
-        <!--Recommendations-->
+        <!--Ürün Önerileri-->
         <scene sceneID="9we-tq-0cQ">
             <objects>
-                <viewController title="Recommendations" id="BZU-Bp-ybr" customClass="RecomendationsViewController" customModule="CompTermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Ürün Önerileri" id="BZU-Bp-ybr" customClass="RecomendationsViewController" customModule="CompTermProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dZB-H2-8nL">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +137,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zaman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BE2-YY-Evg">
-                                                    <rect key="frame" x="152.66666666666666" y="174" width="52.666666666666657" height="20.333333333333343"/>
+                                                    <rect key="frame" x="152.66666666666666" y="174" width="53" height="20.333333333333343"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -336,7 +348,7 @@
         <scene sceneID="6Rl-3Q-h0e">
             <objects>
                 <navigationController title="Recommendations" id="30i-gh-191" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recommendations" image="face.smiling" catalog="system" id="9qh-0H-MD5"/>
+                    <tabBarItem key="tabBarItem" title="Ürün Önerileri" image="face.smiling" catalog="system" id="9qh-0H-MD5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XS8-Zp-qYk">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -353,7 +365,7 @@
         <scene sceneID="wml-sw-1bK">
             <objects>
                 <navigationController title="Camera" id="Hph-iW-8M8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Camera" id="f1Z-tq-eBj"/>
+                    <tabBarItem key="tabBarItem" title="Kamera" id="f1Z-tq-eBj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KB9-Ws-oTh">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -370,7 +382,8 @@
         <scene sceneID="B7g-8o-8Ls">
             <objects>
                 <navigationController title="Profile" id="o7d-HU-nl5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.circle" catalog="system" id="AvY-Nw-4pW"/>
+                    <tabBarItem key="tabBarItem" title="Profil" image="person.circle" catalog="system" id="AvY-Nw-4pW"/>
+                    <navigationItem key="navigationItem" id="4iI-8a-bjL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZD6-ec-7Xi">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -383,11 +396,11 @@
             </objects>
             <point key="canvasLocation" x="-720" y="1036"/>
         </scene>
-        <!--Settings-->
+        <!--Progress-->
         <scene sceneID="LqB-Ep-Yia">
             <objects>
-                <navigationController title="Settings" id="zOG-q3-tcb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.fill" catalog="system" id="VdG-Y2-dhe"/>
+                <navigationController title="Settings" id="zOG-q3-tcb" userLabel="Progress" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="İlerleme" image="arrow.triangle.2.circlepath" catalog="system" id="VdG-Y2-dhe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9jz-gc-jdB">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -935,9 +948,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="face.smiling" catalog="system" width="128" height="121"/>
-        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="lock" catalog="system" width="128" height="128"/>
         <image name="mail" catalog="system" width="128" height="93"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>

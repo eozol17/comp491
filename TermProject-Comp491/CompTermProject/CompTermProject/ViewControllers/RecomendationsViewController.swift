@@ -16,7 +16,7 @@ class RecomendationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Recommended Products"
+        self.title = "Ürün Önerileri"
         // Do any additional setup after loading the view.
         productDataSource.delegate = self
         productDataSource.loadProductList()

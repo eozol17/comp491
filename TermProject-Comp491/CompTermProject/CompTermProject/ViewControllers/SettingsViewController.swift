@@ -19,12 +19,17 @@ class SettingsViewController: UIViewController {
         getImage()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getImage()
+    }
+    
     func getImage() {
         let storage = Storage.storage().reference()
         
         let userID = Auth.auth().currentUser?.uid
         
-        let file = storage.child("images/fadime.jpg")
+        let file = storage.child("\(String(describing: userID!))/comparison/comparison.jpg")
         
         file.getData(maxSize: 5 * 1024 * 1024) { data, error in
             if error == nil && data != nil{
