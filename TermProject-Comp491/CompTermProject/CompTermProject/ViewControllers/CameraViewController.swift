@@ -17,6 +17,7 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     @IBOutlet weak var TakePhotoButton: UIButton!
     @IBOutlet weak var analizButton: UIButton!
     var fileName:String = ""
+    let dateFormatter = DateFormatter()
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -25,15 +26,16 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+    }
+    
+    @IBAction func sendPhotoButtonPressed(_ sender: Any) {
         let date = Date()
-        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         fileName = dateFormatter.string(from: date)
         fileName = fileName+".jpg"
         print(fileName)
-    }
-    
-    @IBAction func sendPhotoButtonPressed(_ sender: Any) {
         if let myImage = imageView.image{
             imageAnalysis(myImage: myImage,name:fileName)
         }
@@ -68,13 +70,13 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
             } else if let data = data {
                 do{
                     print("Got Data")
-                    self.activityIndicator.stopAnimating()
                      let alert = UIAlertController(title: "Analiz Tamamlandı", message: "\"Profil\" ekranından analiz sonuçlarına, \"Ürün Önerileri\" ekranından ürün ve ürün kullanım önerilerine bakabilir, \"İlerleme\" ekranından ilerlemenizi takip edebilirsiniz.", preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default, handler: { action in })
                     alert.addAction(action)
                     DispatchQueue.main.async (
                         execute: { self.present(alert, animated: true)
                     })
+                    self.activityIndicator.stopAnimating()
                 }
                 catch{
                     print("------catch------")
@@ -84,9 +86,9 @@ class CameraViewController: UIViewController,UIImagePickerControllerDelegate,UIN
                 print("------Unhandled------\n")
                 // Handle unexpected error
             }
-            print("---------------")
             self.activityIndicator.stopAnimating()
-             let alert = UIAlertController(title: "Analiz başarısız oldu", message: "\"Profil\" ekranından analiz sonuçlarına, \"Ürün Önerileri\" ekranından ürün ve ürün kullanım önerilerine bakabilir, \"İlerleme\" ekranından ilerlemenizi takip edebilirsiniz.", preferredStyle: .alert)
+            print("---------------")
+             let alert = UIAlertController(title: "Analiz başarısız oldu", message: "Yüz algılanmadı ya da analiz başarısız oldu lütfen tekrar foto çekin", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default, handler: { action in })
             alert.addAction(action)
             DispatchQueue.main.async (
